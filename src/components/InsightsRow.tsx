@@ -58,7 +58,7 @@ export function InsightsRow() {
               <Link
                 key={item.slug}
                 href={`/#insights/${item.slug}`}
-                className="group w-[var(--insight-card)] shrink-0 max-md:min-w-[300px]"
+                className="group w-[var(--insight-card)] shrink-0 max-sm:min-w-[300px]"
               >
                 <div className="relative h-[175px] overflow-hidden">
                   <Image
@@ -77,7 +77,7 @@ export function InsightsRow() {
           </div>
         </div>
 
-        <Button href="/insights" variant="dark" arrow className="mt-9 h-[38px] text-[12.5px] font-bold">
+        <Button href="/#insights" variant="dark" arrow className="mt-9 h-[38px] text-[12.5px] font-bold">
           Learn more
         </Button>
       </div>
