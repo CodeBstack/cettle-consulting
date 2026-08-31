@@ -49,13 +49,13 @@ export function TestimonialSlider() {
             <ChevronRight className="h-5 w-4" />
           </button>
 
-          <article className="relative overflow-hidden rounded-[20px] bg-white px-8 pt-14 pb-10 shadow-[0_8px_40px_rgba(16,24,40,0.06)] lg:px-20">
+          <article className="relative overflow-hidden border-t-4 border- border-black rounded-[20px] bg-white px-8 pt-14 pb-10 shadow-[0_8px_40px_rgba(16,24,40,0.06)] lg:px-20">
             <div className="absolute top-0 left-1/2 flex h-[38px] w-[236px] -translate-x-1/2 items-center justify-center rounded-b-[10px] bg-navy">
               <span className="text-[15px] tracking-[0.2em] text-white">★★★★★</span>
             </div>
             <p
               key={item.name}
-              className="animate-fade-up text-center text-[16px] leading-[1.7] text-[#2d3139] lg:text-[18px]"
+              className="animate-fade-up  text-center text-[16px] leading-[1.7] text-[#2d3139] lg:text-[18px]"
             >
               {item.quote}
             </p>
