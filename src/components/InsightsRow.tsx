@@ -57,8 +57,8 @@ export function InsightsRow() {
             {insights.map((item) => (
               <Link
                 key={item.slug}
-                href={`/insights/${item.slug}`}
-                className="group w-[var(--insight-card)] shrink-0"
+                href={`/#insights/${item.slug}`}
+                className="group w-[var(--insight-card)] shrink-0 max-md:min-w-[300px]"
               >
                 <div className="relative h-[175px] overflow-hidden">
                   <Image
