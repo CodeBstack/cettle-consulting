@@ -6,11 +6,11 @@ import { Logo } from "./Logo";
 const socials = ["Instagram", "Behance", "Dribbble", "Twitter", "Linkedin"];
 const footerNav = [
   { href: "/", label: "Home" },
-  { href: "/contact", label: "Feedback" },
+  { href: "/#contact", label: "Feedback" },
   { href: "/about", label: "About" },
-  { href: "/insights", label: "Blog" },
-  { href: "/work", label: "Project" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#insights", label: "Blog" },
+  { href: "/#work", label: "Project" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Footer() {
