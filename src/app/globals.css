@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1b2a4a;
+  --navy-deep: #0f2046;
+  --navy-mid: #2a3f6b;
+  --lime: #b5e61d;
+  --lime-dark: #91bc0d;
+  --heading: #101828;
+  --ink: #1d1d1d;
+  --muted: #838c95;
+  --muted-2: #676d79;
+  --gray-1: #696969;
+  --gray-4: #c4c4c4;
+  --surface: #f5f5f5;
+  --surface-2: #f7f7f7;
+  --line: #ececec;
+  --insights-pad: 1.5rem;
+  --insight-card: calc((100vw - var(--insights-pad) - 3.75rem) / 3.51);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --insights-pad: 150px;
+  }
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-lime: var(--lime);
+  --color-lime-dark: var(--lime-dark);
+  --color-heading: var(--heading);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-gray-1: var(--gray-1);
+  --color-gray-4: var(--gray-4);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: var(--heading);
+  font-family: var(--font-body), Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.navy-mesh {
+  background-color: #1b2a4a;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(80, 140, 200, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(70, 130, 190, 0.16), transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='42' viewBox='0 0 72 42'%3E%3Cpath d='M36 0 L72 21 L36 42 L0 21 Z' fill='none' stroke='%2379a7d4' stroke-width='0.7' opacity='0.28'/%3E%3C/svg%3E");
+  background-size: auto, auto, 72px 42px;
+}
+
+.site-pad {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5.55vw, 80px);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 28s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease both;
+}
+
+.hero-kenburns {
+  animation: kenburns 16s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}

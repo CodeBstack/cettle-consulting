@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import { ContactForm } from "@/components/ContactForm";
+
+export const metadata: Metadata = { title: "Contact" };
+
+export default function ContactPage() {
+  return (
+    <section className="bg-navy">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-20 lg:grid-cols-2 lg:px-12 lg:py-28">
+        <div className="text-white">
+          <h1 className="font-display text-[40px] font-semibold tracking-tight lg:text-[52px]">
+            Contact us
+          </h1>
+          <p className="mt-5 max-w-md text-[16px] leading-7 text-white/75">
+            Tell us what is at stake. We will tell you whether Cettle is the right room for it.
+          </p>
+          <div className="mt-10 space-y-6 text-[15px] leading-7 text-white/80">
+            <p>
+              Victoria Island
+              <br />
+              Lagos, Nigeria
+            </p>
+            <p>
+              hello@cettle.consulting
+              <br />
+              +234 800 000 0000
+            </p>
+          </div>
+        </div>
+        <ContactForm />
+      </div>
+    </section>
+  );
+}
