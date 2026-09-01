@@ -24,6 +24,7 @@ export function ContactForm() {
       return;
     }
 
+    
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const website = String(data.get("website") ?? "").trim();
