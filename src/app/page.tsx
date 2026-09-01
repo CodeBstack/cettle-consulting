@@ -212,7 +212,7 @@ export default function Home() {
           className="object-cover opacity-35"
           sizes="100vw"
         />
-        <div className="relative mx-auto max-w-[1080px] px-6 py-16 lg:py-[50px]">
+        <div className="relative mx-auto max-w-[1080px] px6 py-16 lg:py-[50px]">
           <div className="grid bg-white p-8 shadow-sm lg:grid-cols-[350px_382px] lg:items-start lg:justify-between lg:p-12">
             <div>
               <h2 className="font-display text-[40px] font-medium text-black">Contact us</h2>
