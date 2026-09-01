@@ -41,7 +41,7 @@ export default async function PracticePage({ params }: Props) {
   return (
     <>
       <section className="overflow-hidden bg-[#E6E7E8]">
-        <div className="pt-20 grid lg:grid-cols-2 items-start lg:items-stretch">
+        <div className="pt-10 lgpt-20 grid lg:grid-cols-2 items-start lg:items-stretch">
           <div className="relative min-h-[360px] bg-[#1a1a1a] lg:min-h-[680px]">
             <Image
               src={item.heroImage}

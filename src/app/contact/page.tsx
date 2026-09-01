@@ -51,7 +51,7 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-        <ContactForm />
+        <ContactForm tone="dark" />
       </div>
     </section>
   );

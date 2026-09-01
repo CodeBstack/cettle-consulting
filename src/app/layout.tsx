@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   },
   description:
     "Cettle Consulting helps organisations, executives, and institutions communicate with authority, build leadership that holds under pressure, and convene the audiences that move their business forward.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
