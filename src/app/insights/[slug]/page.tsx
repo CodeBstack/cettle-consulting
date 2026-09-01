@@ -43,14 +43,14 @@ filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
     <div className="bg-[#f5f5f5]">
       <article className="mx-auto max-w-[1140px] px-6 pt-12 pb-20 lg:px-10 lg:pt-16 lg:pb-28">
           <InsightMeta label={item.label} date={item.date} />
-        <div className="flex mt-10 items-start justify-between gap-6">
+        <div className="flex flex-col-reverse lg:flex-row mt-10 items-start justify-between gap-6">
           <h1 className="mt6 font-display max-w-[820px] text-[24px] leading-[1.2] font-semibold tracking-tight text-heading lg:text-[40px]">
           {item.title}
         </h1>
           <Button
             href="/insights"
             variant="outline"
-            className="h-10 shrink-0 gap-2 self-start rounded-[6px] px-4 text-[13px] font-medium text-[#6b6b6b]"
+            className="h-10 shrink-0 gap-2 self-end lg:self-start rounded-[6px] px-4 text-[13px] font-medium text-[#6b6b6b]"
           >
             <ChevronLeftSmall />
             Back to insight

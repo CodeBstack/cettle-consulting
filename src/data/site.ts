@@ -22,6 +22,8 @@ export const officialEmails = [
   },
 ] as const;
 
+export const contactInbox = "ssamuelolumide@gmail.com";
+
 export const officePhone = {
   label: "0906 800 0571",
   href: "tel:+2349068000571",

@@ -3,13 +3,33 @@
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { NewsletterWaves } from "./icons";
+import { submitSiteForm } from "@/lib/submitForm";
 
 export function NewsletterCta() {
   const [sent, setSent] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState("");
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
+    setError("");
+    setPending(true);
+
+    const email = String(new FormData(event.currentTarget).get("email") ?? "").trim();
+
+    try {
+      await submitSiteForm({
+        name: "Newsletter subscriber",
+        email,
+        message: `${email} signed up for the Cettle Insights newsletter.`,
+        subject: `Cettle newsletter signup: ${email}`,
+      });
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not subscribe. Please try again.");
+    } finally {
+      setPending(false);
+    }
   }
 
   return (
@@ -33,7 +53,7 @@ export function NewsletterCta() {
           </h2>
 
           {sent ? (
-            <p className="mt-8 text-[15px] text-navy">
+            <p className="mt-8 text-[16px] text-navy">
               You are on the list. The next briefing will land in your inbox.
             </p>
           ) : (
@@ -50,16 +70,18 @@ export function NewsletterCta() {
                 type="email"
                 required
                 placeholder="Your Email"
-                className="h-12 flex-1 rounded-[4px] bg-white px-4 text-[14px] text-heading outline-none placeholder:text-[#b0b0b0]"
+                className="h-12 flex-1 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0]"
               />
               <button
                 type="submit"
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-[4px] bg-navy px-7 text-[14px] font-medium text-white transition hover:bg-navy-deep"
+                disabled={pending}
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-[4px] bg-navy px-7 text-[14px] font-medium text-white transition hover:bg-navy-deep disabled:opacity-60"
               >
-                Read More
+                {pending ? "Sending…" : "Read More"}
               </button>
             </form>
           )}
+          {error ? <p className="mt-3 text-[13px] text-red-700">{error}</p> : null}
 
           <p className="mx-auto mt-5 max-w-[460px] text-[12px] leading-5 text-navy/80">
             Get a response tomorrow if you submit by 9pm today. If we received

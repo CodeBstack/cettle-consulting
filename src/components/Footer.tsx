@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CalendarIcon, MailIcon, PhoneIcon, PinIcon, SocialIcon } from "./icons";
 import { Button } from "./Button";
-import { Logo } from "./Logo";
+import { LogoMark } from "./Logo";
 import { officePhone, officialEmails, socialLinks } from "@/data/site";
 
 const footerNav = [
@@ -74,7 +74,9 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-6 border-t border-white/80 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <Logo inverted className="shrink-0" />
+          <Link href="/" aria-label="Cettle Consulting home" className="shrink-0 text-white">
+            <LogoMark className="h-11 w-11" />
+          </Link>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
             {footerNav.map((link) => (
               <Link key={link.label} href={link.href} className="hover:text-lime">

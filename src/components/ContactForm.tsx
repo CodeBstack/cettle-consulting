@@ -2,8 +2,7 @@
 
 import { FormEvent, useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight } from "./icons";
-
-const CONTACT_TO = "ssamuelolumide@gmail.com";
+import { submitSiteForm } from "@/lib/submitForm";
 
 function restoreMobileViewport() {
   const focused = document.activeElement;
@@ -43,49 +42,19 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
 
     const form = event.currentTarget;
     const data = new FormData(form);
-
-    if (String(data.get("company") ?? "").trim()) {
-      setSent(true);
-      setPending(false);
-      return;
-    }
-
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const website = String(data.get("website") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_TO}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          website,
-          message,
-          _subject: `Cettle Consulting enquiry from ${name}`,
-          _template: "table",
-          _captcha: "false",
-          _replyto: email,
-        }),
+      await submitSiteForm({
+        name,
+        email,
+        website,
+        message,
+        subject: `Cettle Consulting enquiry from ${name}`,
       });
-
-      const text = await response.text();
-      let result: { success?: string | boolean; message?: string } = {};
-      try {
-        result = JSON.parse(text) as typeof result;
-      } catch {
-        throw new Error("Could not send your message. Please try again.");
-      }
-
-      if (!response.ok || result.success === false || result.success === "false") {
-        throw new Error(result.message ?? "Could not send your message.");
-      }
-
       setSent(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not send your message.");
@@ -114,14 +83,6 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <div ref={panelRef} className="scroll-mt-28">
       <form onSubmit={onSubmit} className="relative space-y-5">
-        <input
-          type="text"
-          name="company"
-          tabIndex={-1}
-          autoComplete="off"
-          className="absolute -left-[9999px] h-0 w-0 opacity-0"
-          aria-hidden
-        />
         <Field label="Name" name="name" required />
         <Field label="email" name="email" type="email" required />
         <Field label="Website" name="website" />
