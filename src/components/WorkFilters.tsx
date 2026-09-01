@@ -15,7 +15,7 @@ export function WorkFilters({ active }: { active?: WorkCategory }) {
   }, [active]);
 
   return (
-    <div className="-mx-6 flex items-center justify-start gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
+    <div className="-mx-[var(--site-gutter)] flex items-center justify-start gap-3 overflow-x-auto px-[var(--site-gutter)] pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
       {workCategories.map((category) => {
         const selected = active === category;
         return (

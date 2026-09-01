@@ -49,7 +49,7 @@ export function InsightsRow() {
   return (
     <section className="bg-[#e9ecef]">
       <div className="py-14 lg:pt-[65px] lg:pb-[58px]">
-        <div className="flex items-center justify-between px-6 lg:px-[150px]">
+        <div className="site-pad flex items-center justify-between">
           <h2 className="font-display text-[28px] font-light text-black sm:text-[32px] lg:text-[36px]">
             Read our insights
           </h2>
@@ -75,7 +75,7 @@ export function InsightsRow() {
           </div>
         </div>
 
-        <div className="mt-8 pl-6 sm:mt-9 lg:pl-[150px]">
+        <div className="site-pad mt-8 sm:mt-9 !pr-0">
           <div
             ref={scrollerRef}
             className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pr-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -85,7 +85,7 @@ export function InsightsRow() {
                 key={item.slug}
                 href={`/insights/${item.slug}`}
                 data-insight-card
-                className="group w-[min(280px,calc(100vw-3.5rem))] shrink-0 snap-start sm:w-[min(320px,42vw)] lg:w-[min(340px,calc((100vw-150px-5rem)/3.35))]"
+                className="group w-[min(280px,calc(100vw-3.5rem))] shrink-0 snap-start sm:w-[min(320px,42vw)] lg:w-[min(340px,calc((100vw-var(--site-gutter)*2-5rem)/3.35))]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-surface">
                   <Image
@@ -110,7 +110,7 @@ export function InsightsRow() {
           </div>
         </div>
 
-        <div className="mt-8 px-6 sm:mt-9 lg:px-[150px]">
+        <div className="site-pad mt-8 sm:mt-9">
           <Button href="/insights" variant="dark" arrow className="h-[38px] text-[12.5px] font-bold">
             Learn more
           </Button>

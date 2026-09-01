@@ -8,7 +8,7 @@ export default function NotFound() {
         label="Page not found"
         image="/images/hero-1.jpg"
       />
-      <section className="mx-auto max-w-[720px] px-6 py-20 text-center">
+      <section className="site-pad py-20 text-center">
         <p className="text-[16px] leading-7 text-muted">
           That page is not on this site. Let’s get you back to the work.
         </p>

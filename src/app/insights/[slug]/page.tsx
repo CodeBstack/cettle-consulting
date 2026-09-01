@@ -40,7 +40,7 @@ filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
   return (
     <>
     <div className="bg-[#f5f5f5]">
-      <article className="mx-auto max-w-[1140px] px-6 pt-12 pb-20 lg:px-10 lg:pt-16 lg:pb-28">
+      <article className="site-pad pt-12 pb-20 lg:pt-16 lg:pb-28">
           <InsightMeta label={item.label} date={item.date} />
         <div className="flex flex-col-reverse lg:flex-row mt-10 items-start justify-between gap-6">
           <h1 className="mt6 font-display max-w-[820px] text-[24px] leading-[1.2] font-semibold tracking-tight text-heading lg:text-[40px]">
@@ -127,7 +127,7 @@ filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
 
     {popular.length > 0 ? (
         <section className="bg-white">
-          <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-[80px] lg:py-20">
+          <div className="site-pad py-16 lg:py-20">
             <h2 className="font-display text-[26px] font-semibold text-heading lg:text-[32px]">
               Popular Post
             </h2>

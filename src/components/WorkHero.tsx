@@ -16,17 +16,19 @@ export function WorkHero() {
           />
         </div>
         <div className="pointer-events-none absolute inset-0">
-          <div className="pointer-events-auto absolute inset-x-0 bottom-0 w-full translate-y-[38%] bg-white px-6 py-8 sm:inset-x-auto sm:right-0 sm:w-[min(100%,920px)] sm:px-12 sm:py-10 lg:w-[62%] lg:px-16 lg:py-14">
-            <p className="text-[15px] font-semibold text-navy">Works/Events</p>
-            <h1 className="mt-4 max-w-[640px] text-[28px] leading-[1.2] font-medium tracking-[-0.02em] text-navy sm:text-[36px] lg:text-[44px]">
-              What we were asked to solve, what we did, and what changed
-            </h1>
-            <Button
-              href="/contact"
-              className="mt-8 h-11 w-fit min-w-[196px] rounded-[3px] px-6 text-[14px]"
-            >
-              Contact Us
-            </Button>
+          <div className="site-pad relative h-full">
+            <div className="pointer-events-auto absolute inset-x-0 bottom-0 w-full translate-y-[38%] bg-white px-6 py-8 sm:inset-x-auto sm:right-0 sm:w-[min(100%,920px)] sm:px-12 sm:py-10 lg:w-[62%] lg:px-16 lg:py-14">
+              <p className="text-[15px] font-semibold text-navy">Works/Events</p>
+              <h1 className="mt-4 max-w-[640px] text-[28px] leading-[1.2] font-medium tracking-[-0.02em] text-navy sm:text-[36px] lg:text-[44px]">
+                What we were asked to solve, what we did, and what changed
+              </h1>
+              <Button
+                href="/contact"
+                className="mt-8 h-11 w-fit min-w-[196px] rounded-[3px] px-6 text-[14px]"
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       </div>

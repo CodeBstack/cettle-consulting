@@ -11,7 +11,7 @@ export function WhoWeWorkWith() {
 
   return (
     <section className="bg-line">
-      <div className="mx-auto max-w-[1440px] px-6 py-[59px] lg:px-[150px] lg:py-[39px] lg:pb-[39px]">
+      <div className="site-pad py-[59px] lg:py-[39px]">
         <h2 className="font-display text-[36px] leading-tight font-light text-navy">
           Who we work with.
         </h2>

@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Contact" };
 export default function ContactPage() {
   return (
     <section className="bg-navy">
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-20 lg:grid-cols-2 lg:px-12 lg:py-28">
+      <div className="site-pad grid gap-12 py-20 lg:grid-cols-2 lg:py-28">
         <div className="text-white">
           <h1 className="font-display text-[40px] font-semibold tracking-tight lg:text-[52px]">
             Contact us

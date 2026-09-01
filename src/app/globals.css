@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --site-max: 1440px;
+  --site-gutter: clamp(20px, 5.55vw, 80px);
   --navy: #1b2a4a;
   --navy-deep: #0f2046;
   --navy-mid: #2a3f6b;
@@ -79,9 +81,9 @@ body {
 }
 
 .site-pad {
-  width: min(1440px, 100%);
+  width: min(var(--site-max), 100%);
   margin-inline: auto;
-  padding-inline: clamp(20px, 5.55vw, 80px);
+  padding-inline: var(--site-gutter);
 }
 
 @keyframes ticker {

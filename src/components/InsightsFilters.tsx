@@ -19,7 +19,7 @@ export function InsightsFilters({
   }, [active]);
 
   return (
-    <div className="-mx-6 flex gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
+    <div className="-mx-[var(--site-gutter)] flex gap-3 overflow-x-auto px-[var(--site-gutter)] pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
       {insightCategories.map((category) => {
         const selected = active === category;
         return (

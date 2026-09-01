@@ -23,7 +23,7 @@ export default function Home() {
       <LogoTicker />
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-[1440px] items-start gap-10 px-6 py-[78px] lg:grid-cols-[246px_845px] lg:justify-between lg:px-[80px] xl:px-[80px]">
+        <div className="site-pad grid items-start gap-10 py-[78px] lg:grid-cols-[246px_845px] lg:justify-between">
           <h2 className="font-display max-w-[246px] text-[28px] leading-[1.35] font-semibold text-muted">
             Strategy, training, and execution under one roof.
           </h2>
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       <section className="bg-navy text-white">
-        <div className="mx-auto max-w-[1440px] px-6 pt-16 lg:px-[151px] lg:pt-16">
+        <div className="site-pad pt-16">
           <div className="grid gap-10 lg:grid-cols-[572px_290px] lg:items-start lg:justify-between">
             <h2 className="font-display text-[40px] leading-[1.22] font-light tracking-tight lg:text-[48px]">
               Most organisations are not{" "}
@@ -59,7 +59,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="mx-auto mt-10 grid max-w-[1440px] lg:grid-cols-[611px_1fr]">
+        <div className="site-pad mt-10 grid lg:grid-cols-[611px_1fr]">
           <div className="relative min-h-[240px] w-full overflow-hidden lg:h-[429px]">
             <Image
               src="/images/misunderstood.jpg"
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       <section id="services" className="bg-[#f8f9fa]">
-        <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-16 lg:grid-cols-[462px_579px] lg:items-start lg:justify-between lg:px-[80px] lg:py-16">
+        <div className="site-pad grid gap-12 py-16 lg:grid-cols-[462px_579px] lg:items-start lg:justify-between">
           <div className="flex h-full flex-col justify-between">
             <div>
               <p className="text-[12px] font-light text-ink">Practice areas</p>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-[152px] lg:pt-[59px] lg:pb-[63px]">
+        <div className="site-pad py-16 lg:pt-[59px] lg:pb-[63px]">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <h2 className="font-display max-w-[484px] text-[36px] leading-[1.3] font-light text-navy">
               A short, disciplined process. No long discovery for its own sake.
@@ -164,7 +164,7 @@ export default function Home() {
       <WhoWeWorkWith />
 
       <section className="bg-navy">
-        <div className="grid lg:grid-cols-[647px_1fr]">
+        <div className="site-pad grid lg:grid-cols-[647px_1fr]">
           <div className="relative min-h-[280px] w-full overflow-hidden lg:h-[653px]">
             <Image
               src="/images/team.jpg"
@@ -174,7 +174,7 @@ export default function Home() {
               sizes="50vw"
             />
           </div>
-          <div className="flex flex-col justify-between px-6 py-14 text-white lg:px-12 lg:py-16">
+          <div className="flex flex-col justify-between py-14 text-white lg:py-16 lg:pl-12">
             <div>
               <h2 className="font-display max-w-[651px] text-[40px] leading-[1.22] font-light lg:text-[48px]">
                 Built on experience that predates the{" "}
@@ -212,7 +212,7 @@ export default function Home() {
           className="object-cover opacity-35"
           sizes="100vw"
         />
-        <div className="relative mx-auto max-w-[1080px] px6 py-16 lg:py-[50px]">
+        <div className="relative site-pad py-16 lg:py-[50px]">
           <div className="grid bg-white p-8 shadow-sm lg:grid-cols-[350px_382px] lg:items-start lg:justify-between lg:p-12">
             <div>
               <h2 className="font-display text-[40px] font-medium text-black">Contact us</h2>

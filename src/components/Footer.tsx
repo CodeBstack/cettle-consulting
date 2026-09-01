@@ -16,7 +16,7 @@ const footerNav = [
 export function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-[104px] lg:py-[64px]">
+      <div className="site-pad py-16 lg:py-[64px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <p className="font-display text-[56px] leading-[1.15] font-light tracking-tight text-lime sm:text-[72px] lg:text-[92px]">

@@ -47,8 +47,9 @@ export default async function InsightsPage({
             />
           </div>
 
-          <div className="pointer-events-none absolute inset-0 mx-auto max-w-[1440px] px-6 lg:px-[80px]">
-            <div className="pointer-events-auto absolute inset-x-6 bottom-0 w-auto translate-y-[18%] bg-white px-6 py-8 sm:px-8 sm:py-9 lg:inset-x-auto lg:right-[80px] lg:w-[min(100%,560px)] lg:px-12 lg:py-12">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="site-pad relative h-full">
+              <div className="pointer-events-auto absolute inset-x-0 bottom-0 w-auto translate-y-[18%] bg-white px-6 py-8 sm:px-8 sm:py-9 lg:inset-x-auto lg:right-0 lg:w-[min(100%,560px)] lg:px-12 lg:py-12">
               <p className="text-[13px] font-semibold text-navy">Insights</p>
               <h1 className="mt-2 font-display text-[32px] leading-[1.12] font-semibold tracking-tight text-navy lg:text-[42px]">
                 Ideas That Move Markets.
@@ -62,12 +63,13 @@ export default async function InsightsPage({
                 Read More
               </Button>
             </div>
+            </div>
           </div>
         </div>
 
         <div
           id="posts"
-          className="scroll-mt-[88px] mx-auto max-w-[1440px] px-6 pt-28 pb-12 lg:px-[80px] lg:pt-36 lg:pb-16"
+          className="site-pad scroll-mt-[88px] pt-28 pb-12 lg:pt-36 lg:pb-16"
         >
           <InsightsFilters active={active} />
         </div>
@@ -75,7 +77,7 @@ export default async function InsightsPage({
 
       {featured ? (
         <section className="bg-[#ececec]">
-          <div className="mx-auto max-w-[1440px] px-6 pb-16 lg:px-[80px] lg:pb-20">
+          <div className="site-pad pb-16 lg:pb-20">
             <h2 className="text-[22px] font-semibold text-heading lg:text-[26px]">
               Our Recent Post
             </h2>
@@ -113,14 +115,14 @@ export default async function InsightsPage({
           </div>
         </section>
       ) : (
-        <section className="bg-[#ececec] px-6 py-24 text-center">
+        <section className="bg-[#ececec] py-24 text-center">
           <p className="text-[15px] text-muted">No insights in this category yet.</p>
         </section>
       )}
 
       {recentCards.length > 0 ? (
         <section className="bg-[#ececec]">
-          <div className="mx-auto max-w-[1440px] px-6 pb-20 lg:px-[80px]">
+          <div className="site-pad pb-20">
             <div className="grid gap-10 md:grid-cols-3 md:gap-8">
               {recentCards.map((item) => (
                 <InsightCard key={item.slug} item={item} />
@@ -132,7 +134,7 @@ export default async function InsightsPage({
 
       {popular.length > 0 ? (
         <section className="bg-white">
-          <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-[80px] lg:py-20">
+          <div className="site-pad py-16 lg:py-20">
             <h2 className="font-display text-[26px] font-semibold text-heading lg:text-[32px]">
               Popular Post
             </h2>

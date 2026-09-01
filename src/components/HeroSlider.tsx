@@ -36,7 +36,7 @@ export function HeroSlider() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent" />
 
-      <div className="relative mx-auto flex h-full w-full max-w-[1440px] items-center px-6 lg:px-[148px]">
+      <div className="relative site-pad flex h-full items-center">
         <div className="max-w-[600px] text-white">
           <h1 className="font-display text-[40px] leading-[1.22] font-light tracking-tight sm:text-[48px]">
             Communication that carries{" "}

@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <div className="mx-auto flex h-[76px] w-full max-w-[1440px] items-center justify-between px-6 lg:px-[150px]">
+      <div className="site-pad flex h-[76px] items-center justify-between">
         <Link href="/" aria-label="Cettle Consulting home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
@@ -62,8 +62,8 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-line bg-white px-6 py-6 lg:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="border-t border-line bg-white py-6 lg:hidden">
+          <nav className="site-pad flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
