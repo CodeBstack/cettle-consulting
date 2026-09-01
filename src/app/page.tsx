@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroSlider } from "@/components/HeroSlider";
@@ -86,7 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f8f9fa]">
+      <section id="services" className="bg-[#f8f9fa]">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-16 lg:grid-cols-[462px_579px] lg:items-start lg:justify-between lg:px-[80px] lg:py-16">
           <div className="flex h-full flex-col justify-between">
             <div>
@@ -100,15 +101,16 @@ export default function Home() {
                 led, and remembered.
               </p>
             </div>
-            <Button href="/#services" variant="dark" arrow className="mt-10 w-fit h-[38px] text-[12.5px] font-bold">
+            <Button href="/services/communication-and-reputation" variant="dark" arrow className="mt-10 w-fit h-[38px] text-[12.5px] font-bold">
               Learn more
             </Button>
           </div>
           <div className="grid sm:grid-cols-2">
             {practices.map((item) => (
-              <article
-                key={item.title}
-                className={`flex h-[251px] flex-col justify-between p-[25px] ${
+              <Link
+                key={item.slug}
+                href={`/services/${item.slug}`}
+                className={`flex h-[251px] flex-col justify-between p-[25px] transition hover:opacity-90 ${
                   item.featured ? "bg-navy-mid text-white" : "bg-white text-navy"
                 }`}
               >
@@ -126,7 +128,7 @@ export default function Home() {
                     {item.copy}
                   </p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

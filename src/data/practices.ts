@@ -323,6 +323,12 @@ export const practiceDetails: PracticeDetail[] = [
   },
 ];
 
+export function servicePath(slug: string) {
+  return `/services/${slug}`;
+}
+
+export const firstServicePath = servicePath(practiceDetails[0].slug);
+
 export function getPractice(slug: string) {
   return practiceDetails.find((item) => item.slug === slug);
 }

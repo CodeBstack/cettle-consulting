@@ -10,7 +10,19 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return [{ source: "/consultation", destination: "/contact", permanent: true }];
+    return [
+      { source: "/consultation", destination: "/contact", permanent: true },
+      {
+        source: "/services",
+        destination: "/services/communication-and-reputation",
+        permanent: false,
+      },
+      {
+        source: "/about/:slug",
+        destination: "/services/:slug",
+        permanent: true,
+      },
+    ];
   },
 };
 

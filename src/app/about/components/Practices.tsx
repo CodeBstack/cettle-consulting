@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
-import { practiceDetails } from "@/data/practices";
+import { firstServicePath, practiceDetails } from "@/data/practices";
 
 function PracticeCard({
   slug,
@@ -13,7 +13,7 @@ function PracticeCard({
 }: (typeof practiceDetails)[number]) {
   return (
     <Link
-      href={`/about/${slug}`}
+      href={`/services/${slug}`}
       className={`group relative block overflow-hidden bg-navy-deep ${cardMin}`}
     >
       <Image
@@ -62,7 +62,7 @@ export function Practices() {
           </div>
         </div>
         <div className="mt-10 md:mt-12">
-          <Button href="/about/communication-and-reputation" variant="dark" arrow className="h-[38px] text-[12.5px] font-bold">
+          <Button href={firstServicePath} variant="dark" arrow className="h-[38px] text-[12.5px] font-bold">
             Learn more
           </Button>
         </div>

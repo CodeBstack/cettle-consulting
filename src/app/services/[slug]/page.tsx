@@ -6,6 +6,7 @@ import {
   getNextPractice,
   getPractice,
   practiceDetails,
+  servicePath,
 } from "@/data/practices";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -177,7 +178,7 @@ export default async function PracticePage({ params }: Props) {
             </ul>
           </div>
           <Button
-            href={`/about/${next.slug}`}
+            href={servicePath(next.slug)}
             className="h-11 shrink-0 rounded-[4px] px-6 text-[14px]"
           >
             Other Service

@@ -1,7 +1,7 @@
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/services/communication-and-reputation", label: "Services" },
   { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
   { href: "/work", label: "Work" },
@@ -71,24 +71,28 @@ export const frictionPoints = [
 export const practices = [
   {
     title: "Communication and Reputation",
+    slug: "communication-and-reputation",
     copy: "Strategic planning, market entry, and operational excellence.",
     icon: "chart" as const,
     featured: true,
   },
   {
     title: "Leadership and Executive Development",
+    slug: "leadership-and-executive-development",
     copy: "Build leaders who can carry the strategy in public and in the room.",
     icon: "head" as const,
     featured: false,
   },
   {
     title: "Brand and Audience Strategy",
+    slug: "brand-and-audience-strategy",
     copy: "Be positioned deliberately, not by default.",
     icon: "network" as const,
     featured: false,
   },
   {
     title: "Events and Convening",
+    slug: "events-and-convening",
     copy: "Bring the right people into one room and make it count.",
     icon: "tree" as const,
     featured: false,

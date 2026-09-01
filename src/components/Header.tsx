@@ -27,7 +27,9 @@ export function Header() {
             const active =
               link.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(link.href);
+                : link.href.startsWith("/services")
+                  ? pathname.startsWith("/services")
+                  : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}

@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react";
 import { ArrowRight } from "./icons";
 
+const CONTACT_TO = "ssamuelolumide@gmail.com";
+
 export function ContactForm() {
   const [sent, setSent] = useState(false);
   const [pending, setPending] = useState(false);
@@ -16,22 +18,48 @@ export function ContactForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
 
+    if (String(data.get("company") ?? "").trim()) {
+      setSent(true);
+      setPending(false);
+      return;
+    }
+
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const website = String(data.get("website") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_TO}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          website: data.get("website"),
-          message: data.get("message"),
-          company: data.get("company"),
+          name,
+          email,
+          website,
+          message,
+          _subject: `Cettle Consulting enquiry from ${name}`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: email,
         }),
       });
-      const result = (await response.json()) as { ok?: boolean; error?: string };
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error ?? "Could not send your message.");
+
+      const text = await response.text();
+      let result: { success?: string | boolean; message?: string } = {};
+      try {
+        result = JSON.parse(text) as typeof result;
+      } catch {
+        throw new Error("Could not send your message. Please try again.");
       }
+
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(result.message ?? "Could not send your message.");
+      }
+
       setSent(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not send your message.");
