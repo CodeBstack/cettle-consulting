@@ -16,7 +16,7 @@ export function WhoWeWorkWith() {
           Who we work with.
         </h2>
         <div className="mt-[38px] grid lg:grid-cols-[584px_555px] lg:gap-px">
-          <div className="relative min-h-[280px] overflow-hidden lg:h-[320px]">
+          <div className="relative min-h-[220px] w-full overflow-hidden lg:h-[320px]">
             <Image
               src={current.image}
               alt=""

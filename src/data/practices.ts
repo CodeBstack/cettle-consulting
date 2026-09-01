@@ -115,27 +115,27 @@ export const practiceDetails: PracticeDetail[] = [
     whatWeDo: [
       {
         title: "Leadership training.",
-        body: "Programmes that put language, judgement, and presence under pressure so the team can carry the strategy in public.",
+        body: "Cohort programmes for emerging, middle, and senior leaders, built around your actual operating context rather than a generic curriculum.",
       },
       {
         title: "Executive coaching.",
-        body: "One-to-one work with senior leaders on voice, stance, and the rooms that actually mint reputation.",
+        body: "One to one engagements over an agreed cycle, with defined objectives and a written close out.",
       },
       {
         title: "Executive speech writing.",
-        body: "Remarks that sound like the person who has to deliver them, built from a point of view rather than a template.",
+        body: "Keynotes, town halls, board addresses, and launch remarks written in the executive's own voice.",
       },
       {
-        title: "Interview and media preparation.",
-        body: "Rehearsal for the first unscripted question, on camera and off, including hostile and technical formats.",
+        title: "Executive interviews and media preparation.",
+        body: "Message discipline, difficult question handling, and on camera presence.",
       },
       {
         title: "Professional development training.",
-        body: "Cohort programmes for managers and specialists who need a recognisable voice inside the organisation.",
+        body: "Business writing, presentation, negotiation, client management, and internal communication.",
       },
       {
         title: "Entrepreneurship training.",
-        body: "Founders and operators learning to pitch, brief a room, and hold a narrative through growth and difficulty.",
+        body: "For founder led businesses, accelerators, and business support programmes.",
       },
     ],
     engagement: {
@@ -143,34 +143,34 @@ export const practiceDetails: PracticeDetail[] = [
       photo: "/images/practice-laptop.png",
       steps: [
         {
-          title: "Audit",
-          body: "We watch how the leader currently shows up — remarks, interviews, and the gap between the script and the first question.",
+          title: "Needs assessment",
+          body: "One week. We establish the current capability level and the gap against what the role now demands.",
         },
         {
-          title: "Architecture",
-          body: "A stance, not a script: the claims they will own, the language they will actually use, and what they will never say.",
+          title: "Curriculum design",
+          body: "Curriculum design, one to two weeks. Content built around your sector, your cases, and your language.",
         },
         {
-          title: "Activation",
-          body: "Rehearsal, coaching, and live rooms. We stay close until the body does not betray the sentence.",
+          title: "Delivery",
+          body: "In house cohorts, open enrolment sessions, or one to one coaching cycles.",
         },
         {
-          title: "Review",
-          body: "After the high-stakes moment, we debrief what held and what still needs work before the next one.",
+          title: "Measurement",
+          body: "Measurement. Pre and post assessment, plus a cohort report to the sponsor.",
         },
       ],
     },
     deliverables: [
-      "Personal message architecture and voice notes the leader can use without us in the room",
-      "Speech and interview pack for the next high-stakes appearance",
-      "Rehearsal recordings and a marked-up run of questions",
-      "On-camera notes and a short protocol for the comms team supporting them",
-      "A 90-day presence plan: rooms, cadence, and what success looks like",
+      "Bespoke curriculum and facilitator delivery",
+      "Participant workbooks and reference materials",
+      "Pre and post capability assessment",
+      "Cohort report to the programme sponsor, with observations and recommendations",
+      "Certificates of completion where required",
     ],
     audience: [
-      "Executives who are already good at the work and still unexplained in public.",
-      "Leadership teams heading into a listing, a crisis, or a strategy reset.",
-      "Founders and specialists asked to become the face of the organisation.",
+      "Organisations building a leadership bench.",
+      "Human resources and learning teams with a budget and a capability gap.",
+      "Individual executives preparing for a bigger platform than the one they currently occupy.",
     ],
   },
   {
@@ -189,27 +189,27 @@ export const practiceDetails: PracticeDetail[] = [
     whatWeDo: [
       {
         title: "Conference and summit management.",
-        body: "End-to-end production of flagship days, from guest architecture to the follow-through after the lights go down.",
+        body: "Theme and narrative, programme design, speaker curation, and full production management.",
       },
       {
         title: "Workshops and seminars.",
-        body: "Smaller rooms designed around a decision, a skill, or a relationship that would not form in a plenary.",
+        body: "One to one engagements over an agreed cycle, with defined objectives and a written close out.",
       },
       {
         title: "Corporate and stakeholder events.",
-        body: "Town halls, investor days, and regulator-facing sessions where the organisation has to speak with one voice.",
+        body: "Launches, town halls, annual general meetings, and partner engagements.",
       },
       {
-        title: "Speaker curation.",
-        body: "The right people in the right order, with briefs that make the conversation possible rather than decorative.",
+        title: "Speaker curation and briefing.",
+        body: "The right voices, briefed properly, so that sessions build on each other instead of repeating.",
       },
       {
-        title: "Run of show.",
-        body: "Timing, seating, who opens, who is not invited, and how you close — treated as strategy, not logistics.",
+        title: "Run of show and production management.",
+        body: "Minute by minute direction, vendor coordination, and on the day command.",
       },
       {
-        title: "Production management.",
-        body: "Stage, crew, and capture that serve the argument of the day instead of competing with it.",
+        title: "Post event reporting and content.",
+        body: "The recordings, quotes, and insights turned into assets you use for the next twelve months.",
       },
     ],
     engagement: {
@@ -217,34 +217,34 @@ export const practiceDetails: PracticeDetail[] = [
       photo: "/images/practice-laptop.png",
       steps: [
         {
-          title: "Audit",
-          body: "We map the audience, the decision the day must produce, and why the last gathering did not.",
+          title: "Objective setting.",
+          body: "What the event has to achieve commercially, stated before any venue is discussed.",
         },
         {
-          title: "Architecture",
-          body: "Guest list, agenda as an argument, and a run of show that makes the right conversations possible.",
+          title: "Programme design",
+          body: "Theme, narrative arc, session structure, and speaker map.",
         },
         {
-          title: "Activation",
-          body: "We produce the day, or we train your team to produce it, with the same standard of intent.",
+          title: "Production",
+          body: "Budget management, vendor selection, logistics, and rehearsal.",
         },
         {
-          title: "Review",
-          body: "Mapped introductions, a published argument, and a date for the next decision — not only a highlight reel.",
+          title: "Delivery and handover",
+          body: "On site management, then a post event report with content assets.",
         },
       ],
     },
     deliverables: [
-      "Convening brief: purpose, guest architecture, and the decision the day must produce",
-      "Full run of show, speaker briefs, and seating logic",
-      "On-the-ground production and capture, or a trained internal team to run it",
-      "Follow-through pack: introductions, published argument, and next dates",
-      "A debrief against the brief, not against production value",
+      "Message architecture document, covering core narrative, proof points, and approved language",
+      "Crisis communication playbook with scenarios, holding statements, and an escalation chain",
+      "Spokesperson protocol naming who speaks on which subject",
+      "Media list and outreach plan",
+      "Perception baseline report and quarterly review against it",
     ],
     audience: [
-      "Institutions that cannot afford a room that only looks important.",
-      "Associations and event owners with an audience to convene and a reputation on the day.",
-      "Corporates using a summit, retreat, or town hall to move a real decision.",
+      "Associations and professional bodies running an annual conference.",
+      "Corporates convening staff, partners, or stakeholders.",
+      "Agencies and development organisations with a programme to deliver and a reputation attached to how it runs.",
     ],
   },
   {
@@ -263,27 +263,23 @@ export const practiceDetails: PracticeDetail[] = [
     whatWeDo: [
       {
         title: "Brand positioning.",
-        body: "A narrower audience than marketing usually wants, a sharper claim than legal usually likes, and the proof that makes it expensive to copy.",
+        body: "Category definition, differentiation, and the decision about what you will not be.",
       },
       {
         title: "Message architecture.",
-        body: "What we lead with, what we never claim, and how product, leadership, and crisis notes come from the same spine.",
+        body: "The core narrative, the supporting proof points, and the language your whole organisation uses.",
       },
       {
-        title: "Audience research.",
-        body: "How you are actually heard — internally, in the market, and under pressure — before anyone writes a campaign.",
+        title: "Audience research and segmentation.",
+        body: "Who is actually buying, what they believe now, and what would have to change.",
       },
       {
-        title: "Audience engagement.",
-        body: "The rooms, cadence, and proof that turn a position into the sentence other people use when they explain you.",
+        title: "Audience engagement strategy.",
+        body: "Channel selection, content direction, and a cadence your team can sustain.",
       },
       {
-        title: "Internal communication.",
-        body: "So five members of staff stop giving five answers, all of them partly right.",
-      },
-      {
-        title: "Narrative system.",
-        body: "Language that can survive a sceptical buyer, a journalist, and a staff member who has been there longer than the campaign.",
+        title: "Internal communication and adoption.",
+        body: "Positioning fails when staff have not been briefed. We treat internal rollout as part of the work, not as an afterthought.",
       },
     ],
     engagement: {
@@ -291,34 +287,34 @@ export const practiceDetails: PracticeDetail[] = [
       photo: "/images/practice-laptop.png",
       steps: [
         {
-          title: "Audit",
-          body: "We listen to how the organisation is introduced when it is not in the room, and where the versions compete.",
+          title: "Discovery",
+          body: "Discovery, one to two weeks. Internal interviews, competitor review, and audience input.",
         },
         {
-          title: "Architecture",
-          body: "Audience, claim, and proof — written so the website, the interview, and the town hall stop contradicting each other.",
+          title: "Positioning",
+          body: "Positioning, two weeks. Options developed, tested against the market, and a single direction agreed.",
         },
         {
-          title: "Activation",
-          body: "We roll the language into the channels that matter, or we train the people who have to carry it.",
+          title: "Articulation",
+          body: "Articulation, one to two weeks. Message house, tone guidance, and application examples.",
         },
         {
-          title: "Review",
-          body: "We check whether the sentence other people use to explain you has actually changed.",
+          title: "Rollout",
+          body: "Rollout. Internal briefing, staff adoption materials, and a channel plan.",
         },
       ],
     },
     deliverables: [
-      "Positioning platform: who you are for, what you are willing to be known for, and the proof",
-      "Message architecture for product, leadership, and pressure",
-      "Audience map and engagement cadence",
-      "Internal language kit so staff can be held to a standard",
-      "A 90-day rollout plan with owners, not a slide that nobody opens",
+      "Positioning statement and rationale",
+      "Message house covering core narrative, pillars, and proof points",
+      "Audience map with priority segments",
+      "Engagement and content framework",
+      "Internal briefing pack for staff adoption",
     ],
     audience: [
-      "Brands that are the residue of last year’s campaigns.",
-      "Organisations speaking to everyone and meaning little to the people who can say yes.",
-      "Teams whose story changes depending on who is in the meeting.",
+      "Businesses that have grown past the story they started with.",
+      "Firms entering a new market or a new category.",
+      "Organisations that have merged, rebranded, or changed leadership and now sound like two companies at once.",
     ],
   },
 ];

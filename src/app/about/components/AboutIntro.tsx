@@ -3,7 +3,7 @@ import Image from "next/image";
 export function AboutIntro() {
   return (
     <section className="relative">
-      <div className="absolute inset-x-0 top-0 z-0 h-[560px] overflow-hidden">
+      <div className="absolute inset-x-0 top-0 z-0 h-[280px] overflow-hidden sm:h-[400px] md:h-[560px]">
         <Image
           src="/images/hero-waves.png"
           alt=""
@@ -13,7 +13,7 @@ export function AboutIntro() {
           className="object-cover object-[72%_38%]"
         />
       </div>
-      <div className="absolute inset-x-0 top-[560px] bottom-0 z-0 navy-mesh" />
+      <div className="absolute inset-x-0 top-[280px] bottom-0 z-0 navy-mesh sm:top-[400px] md:top-[560px]" />
 
       <div className="relative z-10">
         <div className="site-pad flex h-[300px] items-end pb-8 sm:h-[340px] md:h-[380px]">

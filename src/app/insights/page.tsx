@@ -36,7 +36,7 @@ export default async function InsightsPage({
     <>
       <section className="bg-[#ececec]">
         <div className="relative">
-          <div className="relative h-[420px] overflow-hidden lg:h-[620px]">
+          <div className="relative h-[240px] w-full overflow-hidden sm:h-[420px] lg:h-[620px]">
             <Image
               src="/images/insights-hero.jpg"
               alt="Analyst reviewing a wall of digital screens"
@@ -48,7 +48,7 @@ export default async function InsightsPage({
           </div>
 
           <div className="pointer-events-none absolute inset-0 mx-auto max-w-[1440px] px-6 lg:px-[80px]">
-            <div className="pointer-events-auto absolute right-6 bottom-0 w-[min(100%,560px)] translate-y-[18%] bg-white px-8 py-9 lg:right-[80px] lg:px-12 lg:py-12">
+            <div className="pointer-events-auto absolute inset-x-6 bottom-0 w-auto translate-y-[18%] bg-white px-6 py-8 sm:px-8 sm:py-9 lg:inset-x-auto lg:right-[80px] lg:w-[min(100%,560px)] lg:px-12 lg:py-12">
               <p className="text-[13px] font-semibold text-navy">Insights</p>
               <h1 className="mt-2 font-display text-[32px] leading-[1.12] font-semibold tracking-tight text-navy lg:text-[42px]">
                 Ideas That Move Markets.
@@ -80,7 +80,7 @@ export default async function InsightsPage({
               Our Recent Post
             </h2>
             <div className="mt-8 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className="relative aspect-[4/3] overflow-hidden bg-surface lg:aspect-auto lg:min-h-[460px]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface lg:aspect-auto lg:min-h-[460px]">
                 <Image
                   src={featured.image}
                   alt=""

@@ -31,7 +31,7 @@ export function TestimonialSlider() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-10 max-w-[1075px]">
+        <div className="relative mx-auto mt-10 max-w-[1075px] px-10 sm:px-14 lg:px-16">
           <button
             type="button"
             aria-label="Previous testimonial"
@@ -49,16 +49,22 @@ export function TestimonialSlider() {
             <ChevronRight className="h-5 w-4" />
           </button>
 
-          <article className="relative overflow-hidden border-t-4 border- border-black rounded-[20px] bg-white px-8 pt-14 pb-10 shadow-[0_8px_40px_rgba(16,24,40,0.06)] lg:px-20">
-            <div className="absolute top-0 left-1/2 flex h-[38px] w-[236px] -translate-x-1/2 items-center justify-center rounded-b-[10px] bg-navy">
+          <article className="relative overflow-hidden rounded-[20px] border-t-4 border-black bg-white px-8 pt-14 pb-10 shadow-[0_8px_40px_rgba(16,24,40,0.06)] lg:px-20">
+            <div className="absolute top-0 left-1/2 flex h-[38px] w-[min(236px,calc(100%-2rem))] -translate-x-1/2 items-center justify-center rounded-b-[10px] bg-navy">
               <span className="text-[15px] tracking-[0.2em] text-white">★★★★★</span>
             </div>
-            <p
-              key={item.name}
-              className="animate-fade-up  text-center text-[16px] leading-[1.7] text-[#2d3139] lg:text-[18px]"
-            >
-              {item.quote}
-            </p>
+            <div className="grid">
+              {testimonials.map((entry, i) => (
+                <p
+                  key={entry.name}
+                  className={`col-start-1 row-start-1 text-center text-[16px] leading-[1.7] text-[#2d3139] lg:text-[18px] ${
+                    i === index ? "animate-fade-up visible" : "invisible"
+                  }`}
+                >
+                  {entry.quote}
+                </p>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col items-center">
               <Image
                 src={item.avatar}

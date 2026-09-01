@@ -14,7 +14,7 @@ function PracticeCard({
   return (
     <Link
       href={`/services/${slug}`}
-      className={`group relative block overflow-hidden bg-navy-deep ${cardMin}`}
+      className={`group relative block w-full overflow-hidden bg-navy-deep ${cardMin}`}
     >
       <Image
         src={image}

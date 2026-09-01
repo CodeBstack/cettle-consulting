@@ -29,8 +29,8 @@ export function Logo({
         height={48}
         className={
           inverted
-            ? "h-8 w-auto max-h-8 object-contain object-left brightness-0 invert mix-blend-screen sm:h-9 sm:max-h-9"
-            : "h-8 w-auto max-h-8 object-contain object-left sm:h-9 sm:max-h-9"
+            ? "h-8 w-auto max-h-8 max-w-[min(168px,70vw)] object-contain object-left brightness-0 invert mix-blend-screen sm:h-9 sm:max-h-9"
+            : "h-8 w-auto max-h-8 max-w-[min(168px,70vw)] object-contain object-left sm:h-9 sm:max-h-9"
         }
         priority
       />
