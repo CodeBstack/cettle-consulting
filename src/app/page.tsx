@@ -154,7 +154,7 @@ export default function Home() {
             ))}
           </div>
           <Button variant="mid" className="mt-7 h-10 min-w-[186px] text-[16px]">
-            Book a Consultation
+            Contact Us
           </Button>
         </div>
       </section>

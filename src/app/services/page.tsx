@@ -25,7 +25,7 @@ export default function ServicesPage() {
           ))}
         </div>
         <div className="mt-12">
-          <Button>Book a Consultation</Button>
+          <Button>Contact Us</Button>
         </div>
       </section>
     </>

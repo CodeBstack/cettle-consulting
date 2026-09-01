@@ -1,89 +1,70 @@
 import Image from "next/image";
-
-const PRACTICES = [
-  {
-    title: "Communication and Reputation",
-    body: "Corporate communication, crisis communication, public relations, media relations, reputation management, stakeholder engagement",
-    image: "/images/practice-comms.png",
-    alt: "Hand holding a megaphone through a circular cutout",
-  },
-  {
-    title: "Leadership and Executive Development",
-    body: "Leadership training, executive coaching, executive speech writing, executive interview and media preparation, professional development training, entrepreneurship training",
-    image: "/images/practice-leadership.png",
-    alt: "Chess king among fallen pieces",
-  },
-  {
-    title: "Events and Convening",
-    body: "Conference and summit management, workshops and seminars, corporate and stakeholder events, speaker curation, run of show and production management",
-    image: "/images/practice-events.png",
-    alt: "Circular auditorium seating",
-  },
-  {
-    title: "Brand and Audience Strategy",
-    body: "Brand positioning, message architecture, audience research, audience engagement, internal communication",
-    image: "/images/practice-brand.png",
-    alt: "Black spheres clustered around a light",
-  },
-];
+import Link from "next/link";
+import { Button } from "@/components/Button";
+import { practiceDetails } from "@/data/practices";
 
 function PracticeCard({
+  slug,
   title,
-  body,
+  cardBody,
   image,
-  alt,
-}: (typeof PRACTICES)[number]) {
+  imageAlt,
+  cardMin,
+}: (typeof practiceDetails)[number]) {
   return (
-    <article className="overflow-hidden bg-navy-deep">
-      <div className="px-7 py-8 md:px-8 md:py-9">
-        <h3 className="text-[24px] font-semibold leading-snug text-lime md:text-[26px]">{title}</h3>
-        <p className="mt-4 text-[14px] leading-6 text-white/90 md:text-[15px]">{body}</p>
+    <Link
+      href={`/about/${slug}`}
+      className={`group relative block overflow-hidden bg-navy-deep ${cardMin}`}
+    >
+      <Image
+        src={image}
+        alt={imageAlt}
+        fill
+        sizes="(min-width: 768px) 50vw, 100vw"
+        className="object-cover grayscale transition duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/45 to-navy-deep/20" />
+      <div className="relative z-10 max-w-[420px] px-7 py-8 md:px-8 md:py-9">
+        <h3 className="text-[22px] leading-snug font-semibold text-lime md:text-[26px]">{title}</h3>
+        <p className="mt-4 text-[13px] leading-6 text-white/95 md:text-[14px]">{cardBody}</p>
       </div>
-      <div className="relative h-[180px] grayscale md:h-[210px]">
-        <Image src={image} alt={alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
-      </div>
-    </article>
+    </Link>
   );
 }
 
 export function Practices() {
+  const [comms, leadership, events, brand] = practiceDetails;
+
   return (
-    <section id="practices" className="bg-white">
+    <section id="practices" className="bg-[#f6f6f6]">
       <div className="site-pad py-16 md:py-24">
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-x-4 inset-y-8 hidden rounded-sm border border-dashed border-black/20 md:block" />
-          <div className="grid gap-8 md:grid-cols-2 md:gap-x-10 md:gap-y-12">
-            <div className="md:pr-8">
-              <PracticeCard {...PRACTICES[0]} />
-            </div>
-            <div className="md:pt-2">
-              <h2 className="mb-10 max-w-[420px] text-[40px] font-semibold leading-[1.12] tracking-[-0.03em] text-navy md:mb-12 md:text-[58px]">
-                Four practices, built
-                <br />
-                to work <span className="font-medium text-together">together.</span>
-              </h2>
-              <PracticeCard {...PRACTICES[1]} />
-            </div>
-            <div className="relative md:pl-16">
-              <span
-                aria-hidden
-                className="absolute top-[-48px] left-6 hidden h-[72px] border-l border-dashed border-black/25 md:block"
-              />
-              <PracticeCard {...PRACTICES[2]} />
-            </div>
-            <div>
-              <PracticeCard {...PRACTICES[3]} />
-            </div>
+        <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-x-10 md:gap-y-0">
+          <div>
+            <PracticeCard {...comms} />
           </div>
-          <div className="mt-10">
-            <a
-              href="/consultation"
-              className="inline-flex items-center gap-2 rounded-md bg-black px-7 py-3 text-[15px] font-medium text-white"
-            >
-              Learn more
-              <span aria-hidden>→</span>
-            </a>
+          <div>
+            <h2 className="mb-10 max-w-[440px] text-[36px] leading-[1.12] font-semibold tracking-[-0.03em] text-navy md:mb-12 md:text-[52px]">
+              Four practices, built
+              <br />
+              <span className="font-medium text-together">to work</span> together.
+            </h2>
+            <PracticeCard {...leadership} />
           </div>
+          <div className="relative md:mt-10 md:ml-14">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-8 -left-10 hidden h-[calc(100%+64px)] w-[calc(100%+24px)] border border-dashed border-black/25 md:block"
+            />
+            <PracticeCard {...events} />
+          </div>
+          <div className="md:mt-10">
+            <PracticeCard {...brand} />
+          </div>
+        </div>
+        <div className="mt-10 md:mt-12">
+          <Button href="/about/communication-and-reputation" variant="dark" arrow className="h-[38px] text-[12.5px] font-bold">
+            Learn more
+          </Button>
         </div>
       </div>
     </section>

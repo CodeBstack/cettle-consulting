@@ -20,10 +20,10 @@ export function AboutIntro() {
           <h1 className="text-[32px] font-bold text-navy md:text-[36px]">About us</h1>
         </div>
 
-        <div className="site-pad pb-16 md:pb-20">
+        <div className="site-pad pb-4 md:pb-8">
           <div className="bg-white">
             <div className="px-6 pt-12 sm:px-12 md:px-16 md:pt-16 lg:px-[80px]">
-              <h2 className="max-w-[940px] text-[32px] font-semibold leading-[1.16] tracking-[-0.025em] text-navy sm:text-[48px] md:text-[72px] md:leading-[1.1]">
+              <h2 className="max-w-[940px] text-[32px] leading-[1.16] font-semibold tracking-[-0.025em] text-navy sm:text-[48px] md:text-[72px] md:leading-[1.1]">
                 Good work keeps losing to better communication. We started Cettle to
                 change that.
               </h2>
@@ -33,7 +33,7 @@ export function AboutIntro() {
                 Nigeria and beyond.
               </p>
             </div>
-            <div className="relative h-[220px] sm:h-[300px] md:h-[360px]">
+            <div className="relative h-[220px] sm:h-[300px] md:h-[380px]">
               <Image
                 src="/images/office.png"
                 alt="Two colleagues reviewing analytics together in an office"
@@ -42,11 +42,11 @@ export function AboutIntro() {
                 className="object-cover object-center"
               />
             </div>
-            <div className="grid gap-8 px-6 py-12 sm:px-12 md:grid-cols-[0.85fr_1.45fr] md:gap-16 md:px-16 md:py-16 lg:px-[80px] lg:py-20">
-              <h3 className="text-[30px] font-semibold leading-tight text-navy md:text-[46px]">
+            <div className="grid items-start gap-8 px-6 py-12 sm:px-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] md:gap-12 md:px-16 md:py-[72px] lg:px-[80px]">
+              <h3 className="text-[32px] leading-tight font-semibold tracking-tight text-heading md:text-[46px]">
                 Why we exist.
               </h3>
-              <div className="space-y-5 text-[16px] leading-[1.7] text-body md:text-[17px] md:leading-[1.75]">
+              <div className="space-y-5 text-[15px] leading-[1.75] text-body md:text-[16px] md:leading-[1.8]">
                 <p>
                   Across Nigerian business we kept seeing the same pattern. Capable
                   organisations with real products losing ground to competitors who were
@@ -58,12 +58,9 @@ export function AboutIntro() {
                 <p>
                   The gap was never talent. It was communication, and almost nobody was
                   treating it as infrastructure. It was being treated as something the
-                  marketing team would handle later.
-                </p>
-                <p>
-                  Cettle Consulting was built to close that gap with practical work. Not
-                  theory, not a certificate, and not a strategy document that nobody opens
-                  after the invoice is paid.
+                  marketing team would handle later. Cettle Consulting was built to close
+                  that gap with practical work. Not theory, not a certificate, and not a
+                  strategy document that nobody opens after the invoice is paid.
                 </p>
               </div>
             </div>

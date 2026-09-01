@@ -15,14 +15,15 @@
   --surface: #f5f5f5;
   --surface-2: #f7f7f7;
   --line: #ececec;
-  --insights-pad: 1.5rem;
-  --insight-card: calc((100vw - var(--insights-pad) - 3.75rem) / 3.51);
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --insights-pad: 150px;
-  }
+  --body: #6b6b6b;
+  --together: #9aa3ad;
+  --paper: #f3f3f3;
+  --mist: #f4f4f4;
+  --chip: #ececec;
+  --lime-mid: #e4f3b8;
+  --lime-bar: #c5ec4a;
+  --lime-card: #e7f5b8;
+  --lime-soft: #eef8c4;
 }
 
 @theme inline {
@@ -40,12 +41,21 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-line: var(--line);
+  --color-body: var(--body);
+  --color-together: var(--together);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-chip: var(--chip);
+  --color-lime-mid: var(--lime-mid);
+  --color-lime-bar: var(--lime-bar);
+  --color-lime-card: var(--lime-card);
+  --color-lime-soft: var(--lime-soft);
   --font-sans: var(--font-body);
   --font-display: var(--font-body);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {

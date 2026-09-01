@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { navLinks } from "@/data/site";
 import { Button } from "./Button";
 import { Logo } from "./Logo";
@@ -10,6 +10,10 @@ import { Logo } from "./Logo";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 bg-white">
@@ -39,7 +43,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button className="h-10 min-w-[165px] text-[14px]">Book a Consultation</Button>
+          <Button className="h-10 min-w-[165px] text-[14px]">Contact Us</Button>
         </div>
 
         <button
@@ -68,7 +72,7 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button className="mt-2 w-full">Book a Consultation</Button>
+            <Button className="mt-2 w-full">Contact Us</Button>
           </nav>
         </div>
       ) : null}

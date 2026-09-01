@@ -14,7 +14,11 @@ export function Logo({
         alt="Cettle Consulting"
         width={168}
         height={48}
-        className={`h-[38px] w-auto ${inverted ? "brightness-0 invert" : ""}`}
+        className={
+          inverted
+            ? "h-8 w-auto max-h-8 object-contain object-left brightness-0 invert mix-blend-screen sm:h-9 sm:max-h-9"
+            : "h-8 w-auto max-h-8 object-contain object-left sm:h-9 sm:max-h-9"
+        }
         priority
       />
     </span>

@@ -1,34 +1,51 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageHero } from "@/components/PageHero";
-import { workItems } from "@/data/site";
+import { WorkCard } from "@/components/WorkCard";
+import { WorkFilters } from "@/components/WorkFilters";
+import { WorkHero } from "@/components/WorkHero";
+import { workCategories, workItems, type WorkCategory } from "@/data/work";
 
 export const metadata: Metadata = { title: "Work" };
 
-export default function WorkPage() {
+function isCategory(value: string | undefined): value is WorkCategory {
+  return workCategories.includes(value as WorkCategory);
+}
+
+export default async function WorkPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
+  const active = isCategory(category) ? category : undefined;
+  const filtered = active
+    ? workItems.filter((item) => item.category === active)
+    : workItems;
+
+  const featured = filtered[0];
+  const rest = filtered.slice(1, 3);
+
   return (
     <>
-      <PageHero
-        label="Work"
-        image="/images/hero-4.jpg"
-      />
-      <section className="mx-auto max-w-[1440px] px-6 py-20 lg:px-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          {workItems.map((item) => (
-            <article key={item.title} className="group">
-              <div className="relative h-72 overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                  sizes="50vw"
-                />
-              </div>
-              <p className="mt-4 text-[12px] tracking-[0.14em] text-muted uppercase">{item.category}</p>
-              <h2 className="mt-2 font-display text-[24px] font-semibold">{item.title}</h2>
-            </article>
-          ))}
+      <WorkHero />
+      <section className="bg-navy pb-20">
+        <div className="site-pad">
+          <WorkFilters active={active} />
+          {featured ? (
+            <div className="mt-12 space-y-6">
+              <WorkCard item={featured} featured />
+              {rest.length > 0 ? (
+                <div className="grid gap-6 md:grid-cols-2">
+                  {rest.map((item) => (
+                    <WorkCard key={item.slug} item={item} />
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <p className="mt-16 text-center text-[15px] text-white/70">
+              No work in this category yet.
+            </p>
+          )}
         </div>
       </section>
     </>

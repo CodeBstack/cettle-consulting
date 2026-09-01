@@ -36,7 +36,7 @@ export function Header() {
           href="#contact"
           className="hidden bg-navy px-5 py-3 text-[15px] font-medium text-white sm:inline-flex"
         >
-          Book a Consultation
+          Contact Us
         </a>
         <button
           type="button"
@@ -69,7 +69,7 @@ export function Header() {
               className="mt-2 bg-navy px-4 py-3 text-center text-white"
               onClick={() => setOpen(false)}
             >
-              Book a Consultation
+              Contact Us
             </a>
           </nav>
         </div>

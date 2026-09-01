@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
+import { officePhone, officialEmails, socialLinks } from "@/data/site";
+import { PhoneIcon, SocialIcon } from "@/components/icons";
 
 export const metadata: Metadata = { title: "Contact" };
 
@@ -20,10 +22,32 @@ export default function ContactPage() {
               <br />
               Lagos, Nigeria
             </p>
+            <p className="space-y-1">
+              {officialEmails.map((email) => (
+                <a key={email.href} href={email.href} className="block hover:text-lime">
+                  {email.label}
+                </a>
+              ))}
+            </p>
             <p>
-              hello@cettle.consulting
-              <br />
-              +234 800 000 0000
+              <a href={officePhone.href} className="inline-flex items-center gap-2 hover:text-lime">
+                <PhoneIcon className="h-5 w-5 shrink-0" />
+                {officePhone.label}
+              </a>
+            </p>
+            <p className="flex flex-wrap gap-x-5 gap-y-2">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-lime"
+                >
+                  <SocialIcon name={item.icon} />
+                  {item.label}
+                </a>
+              ))}
             </p>
           </div>
         </div>

@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { CalendarIcon, MailIcon, PinIcon } from "./icons";
+import { CalendarIcon, MailIcon, PhoneIcon, PinIcon, SocialIcon } from "./icons";
 import { Button } from "./Button";
 import { Logo } from "./Logo";
+import { officePhone, officialEmails, socialLinks } from "@/data/site";
 
-const socials = ["Instagram", "Behance", "Dribbble", "Twitter", "Linkedin"];
 const footerNav = [
   { href: "/", label: "Home" },
-  { href: "/#contact", label: "Feedback" },
+  { href: "/contact", label: "Feedback" },
   { href: "/about", label: "About" },
-  { href: "/#insights", label: "Blog" },
-  { href: "/#work", label: "Project" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/insights", label: "Blog" },
+  { href: "/work", label: "Project" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Footer() {
@@ -23,15 +23,21 @@ export function Footer() {
               Want to Start
               <br />a Project?
             </p>
-            <Button variant="white" href="/consultation" arrow className="mt-[30px] h-[38px] text-[12.5px] font-bold">
-              Book a consultation
+            <Button variant="white" href="/contact" arrow className="mt-[30px] h-[38px] text-[12.5px] font-bold">
+              Contact Us
             </Button>
           </div>
-          <ul className="space-y-2 text-[16.5px] leading-7">
-            {socials.map((item) => (
-              <li key={item}>
-                <a href="#" className="transition hover:text-lime">
-                  {item}
+          <ul className="space-y-3 text-[16.5px] leading-7">
+            {socialLinks.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 transition hover:text-lime"
+                >
+                  <SocialIcon name={item.icon} />
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -43,12 +49,23 @@ export function Footer() {
             <PinIcon className="mt-0.5 h-[17px] w-[17px] shrink-0 text-lime" />
             <span>Morningside 3, Michelle Court, Millennium Homes, Oniru, Victoria Island, Lagos.</span>
           </p>
+          <div className="flex items-start gap-[9px]">
+            <MailIcon className="mt-0.5 h-[19px] w-[21px] shrink-0 text-lime" />
+            <div className="space-y-1">
+              {officialEmails.map((email) => (
+                <p key={email.href}>
+                  <a href={email.href} className="hover:text-lime">
+                    {email.label}
+                  </a>
+                </p>
+              ))}
+            </div>
+          </div>
           <p className="flex items-center gap-[9px]">
-            <MailIcon className="h-[19px] w-[21px] shrink-0 text-lime" />
-            <a href="mailto:info@cettle.com" className="hover:text-lime">
-              info@cettle.com
+            <PhoneIcon className="h-[17px] w-[17px] shrink-0 text-lime" />
+            <a href={officePhone.href} className="hover:text-lime">
+              {officePhone.label}
             </a>
-            <span>0906 800 0571</span>
           </p>
           <p className="flex items-center gap-[6px]">
             <CalendarIcon className="h-6 w-6 shrink-0 text-lime" />
@@ -57,7 +74,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-6 border-t border-white/80 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <Logo inverted />
+          <Logo inverted className="shrink-0" />
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
             {footerNav.map((link) => (
               <Link key={link.label} href={link.href} className="hover:text-lime">

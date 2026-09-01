@@ -1,4 +1,6 @@
 import { Logo } from "./Logo";
+import { officePhone, officialEmails, socialLinks } from "@/data/site";
+import { PhoneIcon, SocialIcon } from "@/components/icons";
 
 function PinIcon() {
   return (
@@ -31,14 +33,6 @@ function CalIcon() {
   );
 }
 
-const SOCIAL = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "Behance", href: "https://behance.net" },
-  { label: "Dribbble", href: "https://dribbble.com" },
-  { label: "Twitter", href: "https://x.com" },
-  { label: "Linkedin", href: "https://www.linkedin.com" },
-];
-
 const FOOT_NAV = ["Home", "About", "Project", "Feedback", "Blog", "Contact"];
 
 export function Footer() {
@@ -53,17 +47,23 @@ export function Footer() {
               a Project?
             </h2>
             <a
-              href="mailto:info@cettle.com"
+              href="/contact"
               className="mt-8 inline-flex items-center gap-3 rounded-sm bg-white px-5 py-3 text-[15px] font-medium text-navy"
             >
-              Book a consultation
+              Contact Us
               <span aria-hidden>→</span>
             </a>
           </div>
           <ul className="space-y-3 text-[18px] md:pt-3 md:text-right">
-            {SOCIAL.map((s) => (
+            {socialLinks.map((s) => (
               <li key={s.label}>
-                <a href={s.href} target="_blank" rel="noreferrer" className="hover:text-lime">
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 hover:text-lime md:flex-row-reverse"
+                >
+                  <SocialIcon name={s.icon} />
                   {s.label}
                 </a>
               </li>
@@ -82,16 +82,19 @@ export function Footer() {
             <span className="mt-0.5">
               <SendIcon />
             </span>
-            <span>
-              <a href="mailto:info@cettle.com" className="hover:text-lime">
-                info@cettle.com
-              </a>
-              <span className="mx-3 hidden sm:inline" />
-              {"  "}
-              <a href="tel:+2349068000571" className="hover:text-lime">
-                0906 800 0571
-              </a>
+            <span className="space-y-1">
+              {officialEmails.map((email) => (
+                <a key={email.href} href={email.href} className="block hover:text-lime">
+                  {email.label}
+                </a>
+              ))}
             </span>
+          </li>
+          <li className="flex items-center gap-3">
+            <PhoneIcon className="h-[18px] w-[18px] shrink-0 text-lime" />
+            <a href={officePhone.href} className="hover:text-lime">
+              {officePhone.label}
+            </a>
           </li>
           <li className="flex items-start gap-3">
             <span className="mt-0.5">

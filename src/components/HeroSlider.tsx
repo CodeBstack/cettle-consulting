@@ -50,7 +50,7 @@ export function HeroSlider() {
           </p>
           <div className="mt-[31px] flex flex-wrap gap-[31px]">
             <Button variant="mid" className="h-10 min-w-[186px] text-[16px]">
-              Book a Consultation
+              Contact Us
             </Button>
             <Button href="/#services" variant="ghost" className="h-10 min-w-[193px] text-[16px]">
               Explore our practices

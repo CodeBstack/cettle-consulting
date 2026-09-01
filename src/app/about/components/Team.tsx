@@ -55,8 +55,8 @@ export function Team() {
             ))}
           </div>
           <div className="mt-8 flex justify-end">
-            <a href="#contact" className="bg-navy px-6 py-3 text-[15px] font-medium text-white">
-              Book a Consultation
+            <a href="/contact" className="bg-navy px-6 py-3 text-[15px] font-medium text-white">
+              Contact Us
             </a>
           </div>
         </div>

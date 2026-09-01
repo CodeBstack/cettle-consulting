@@ -1,10 +1,11 @@
+
 import Link from "next/link";
 import { ArrowRight } from "./icons";
 
 type Props = {
   href?: string;
   children: React.ReactNode;
-  variant?: "navy" | "mid" | "dark" | "ghost" | "white";
+  variant?: "navy" | "mid" | "dark" | "ghost" | "white" | "outline";
   className?: string;
   arrow?: boolean;
 };
@@ -16,10 +17,12 @@ const styles = {
   ghost:
     "border border-white/90 bg-transparent text-white hover:bg-white hover:text-navy",
   white: "bg-white text-ink hover:bg-surface",
+  outline:
+    "border border-[#cfcfcf] bg-transparent text-navy hover:border-navy",
 };
 
 export function Button({
-  href = "/consultation",
+  href = "/contact",
   children,
   variant = "navy",
   className = "",

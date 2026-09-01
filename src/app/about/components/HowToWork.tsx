@@ -20,13 +20,16 @@ function IconBolt() {
   );
 }
 
-function IconUsers() {
+function IconBitcoin() {
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <circle cx="7" cy="6.2" r="2.2" stroke="white" strokeWidth="1.5" />
-      <path d="M3.2 14c.4-2.3 2-3.6 3.8-3.6s3.4 1.3 3.8 3.6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="12.4" cy="6.6" r="1.8" stroke="white" strokeWidth="1.4" />
-      <path d="M12 10.6c1.6.2 2.8 1.3 3.2 3.2" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path
+        d="M6.1 2.2v1.3M9.2 2.2v1.3M6.1 12.5v1.3M9.2 12.5v1.3M5.2 3.5h4.1c1.5 0 2.6.9 2.6 2.2 0 1-.5 1.7-1.4 2 .9.2 1.6 1.1 1.6 2.2 0 1.5-1.2 2.4-2.9 2.4H5.2V3.5Z"
+        stroke="white"
+        strokeWidth="1.45"
+        strokeLinejoin="round"
+      />
+      <path d="M5.2 8h4.4" stroke="white" strokeWidth="1.45" />
     </svg>
   );
 }
@@ -52,8 +55,8 @@ const WAYS = [
     titleTop: "Training",
     titleBot: "programme",
     body: "Priced per cohort or per day, delivered in house or as open enrolment.",
+    icon: <IconBitcoin />,
     fit: "Building capability across a team rather than buying execution",
-    icon: <IconUsers />,
     tone: "grey" as const,
   },
 ];
@@ -62,34 +65,34 @@ export function HowToWork() {
   return (
     <section id="work" className="bg-paper">
       <div className="site-pad py-16 md:py-24">
-        <h2 className="text-center text-[36px] font-semibold tracking-[-0.03em] text-navy md:text-[56px]">
+        <h2 className="text-center text-[36px] font-semibold tracking-[-0.03em] text-heading md:text-[52px]">
           How to work with us.
         </h2>
-        <p className="mx-auto mt-3 max-w-[640px] text-center text-[16px] text-muted md:text-[18px]">
+        <p className="mx-auto mt-3 max-w-[640px] text-center text-[15px] text-muted md:text-[17px]">
           Three ways in. Every one of them is scoped in writing before work begins
         </p>
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {WAYS.map((way) => (
             <article
               key={way.titleTop}
-              className={`flex min-h-[420px] flex-col px-7 py-8 md:min-h-[480px] md:px-8 md:py-9 ${
+              className={`flex min-h-[400px] flex-col px-7 py-8 md:min-h-[460px] md:px-8 md:py-9 ${
                 way.tone === "green" ? "bg-lime-mid" : "bg-chip"
               }`}
             >
-              <div className="mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-navy">
+              <div className="mb-8 grid h-10 w-10 place-items-center rounded-full bg-navy">
                 {way.icon}
               </div>
-              <h3 className="text-[32px] font-semibold leading-[1.05] tracking-[-0.03em] text-navy md:text-[40px]">
+              <h3 className="text-[30px] leading-[1.08] font-semibold tracking-[-0.03em] text-heading md:text-[36px]">
                 {way.titleTop}
                 <br />
                 {way.titleBot}
               </h3>
-              <p className="mt-5 text-[15px] leading-6 text-navy/80">{way.body}</p>
-              <div className="mt-auto">
-                <div className="mb-4 bg-lime-bar px-3 py-2 text-[13px] font-medium text-navy">
+              <p className="mt-5 text-[14px] leading-6 text-heading/80 md:text-[15px]">{way.body}</p>
+              <div className="mt-auto pt-10">
+                <div className="mb-4 bg-lime-bar px-3 py-2 text-[13px] font-medium text-heading">
                   Best for
                 </div>
-                <p className="text-[14px] leading-5 text-navy/85">{way.fit}</p>
+                <p className="text-[14px] leading-5 text-heading/85">{way.fit}</p>
               </div>
             </article>
           ))}

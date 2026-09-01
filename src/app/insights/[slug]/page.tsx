@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { insights } from "@/data/site";
+import { Button } from "@/components/Button";
+import { InsightCard, InsightMeta } from "@/components/InsightCard";
+import { ChevronLeftSmall } from "@/components/icons";
+import { getInsight, getNextInsight, insights } from "@/data/site";
+import { NewsletterCta } from "@/components/NewsletterCta";
+import { log } from "console";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -12,34 +16,132 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = insights.find((entry) => entry.slug === slug);
+  const item = getInsight(slug);
   return { title: item?.title ?? "Insight" };
 }
 
 export default async function InsightArticle({ params }: Props) {
   const { slug } = await params;
-  const item = insights.find((entry) => entry.slug === slug);
+  const item = getInsight(slug);
   if (!item) notFound();
 
+  const next = getNextInsight(slug);
+  const [lead, beforeQuote, afterQuote, closing] = item.body;
+
+  const filtered = slug
+  ? insights.filter((item) => item.slug !== slug)
+  : insights;
+  
+
+const popular =
+filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
+// console.log(slug,filtered.length,popular);
+
+
   return (
-    <article className="mx-auto max-w-[820px] px-6 py-16 lg:py-20">
-      <Link href="/insights" className="text-[13px] font-medium text-navy">
-        ← Insights
-      </Link>
-      <p className="mt-8 text-[12px] tracking-[0.14em] text-muted uppercase">{item.category}</p>
-      <h1 className="mt-3 font-display text-[36px] leading-tight font-semibold tracking-tight lg:text-[48px]">
-        {item.title}
-      </h1>
-      <p className="mt-4 text-[14px] text-muted">{item.date}</p>
-      <div className="relative mt-10 h-[360px] overflow-hidden">
-        <Image src={item.image} alt="" fill className="object-cover" sizes="820px" />
-      </div>
-      <p className="mt-10 text-[17px] leading-8 text-heading/85">{item.excerpt}</p>
-      <p className="mt-6 text-[17px] leading-8 text-heading/85">
-        Cettle works with organisations that already know the work is good — and still find themselves
-        explained badly. The fix is not more noise. It is a tighter story, a steadier leadership voice,
-        and rooms designed for the decisions that matter.
-      </p>
-    </article>
+    <>
+    <div className="bg-[#f5f5f5]">
+      <article className="mx-auto max-w-[1140px] px-6 pt-12 pb-20 lg:px-10 lg:pt-16 lg:pb-28">
+          <InsightMeta label={item.label} date={item.date} />
+        <div className="flex mt-10 items-start justify-between gap-6">
+          <h1 className="mt6 font-display max-w-[820px] text-[24px] leading-[1.2] font-semibold tracking-tight text-heading lg:text-[40px]">
+          {item.title}
+        </h1>
+          <Button
+            href="/insights"
+            variant="outline"
+            className="h-10 shrink-0 gap-2 self-start rounded-[6px] px-4 text-[13px] font-medium text-[#6b6b6b]"
+          >
+            <ChevronLeftSmall />
+            Back to insight
+          </Button>
+        </div>
+
+       
+
+        <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[24px] bg-surface lg:mt-10">
+          <Image
+            src={item.image}
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="980px"
+          />
+        </div>
+
+        <div className="mt-10 max-w[820px] lg:mt-12">
+          {item.excerpt ? (
+            <p className="text-[12px] leading-[1.85] text-[#6b6b6b] lg:text-[14px]">
+              {item.excerpt}
+            </p>
+          ) : null}
+          {beforeQuote ? (
+            <p className="mt-6 text-[12px] leading-[1.85] text-[#6b6b6b] lg:text-[14px]">
+              {beforeQuote}
+            </p>
+          ) : null}
+
+          <blockquote className="my-12 max-w-[830px] border-l-[4px] border-[#7C4EE4] py-1 pl-6 lg:pl8">
+            <p className="font-display text-[16px] leading-[1.45] text-[#666666] italic lg:text-[22px]">
+              {item.quote.text}
+            </p>
+            <footer className="mt-4 text-[14px] font-medium text-[#6b6b6b]">
+              — {item.quote.attribution}
+            </footer>
+          </blockquote>
+
+          {afterQuote ? (
+            <p className="text-[12px] leading-[1.85] text-[#6b6b6b] lg:text-[14px]">
+              {afterQuote}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="relative mt-12 aspect-[16/9] overflow-hidden rounded-[16px] bg-surface lg:mt-14">
+          <Image
+            src={item.secondaryImage}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="980px"
+          />
+        </div>
+
+        <div className="mt-10 max-w[820px]">
+          {closing ? (
+            <p className="text-[12px] leading-[1.85] text-[#6b6b6b] lg:text-[14px]">
+              {closing}
+            </p>
+          ) : null}
+          <Button
+            href={`/insights/${next.slug}`}
+            className="mt-10 h-10 min-w-[128px] rounded-[4px]"
+          >
+            Read Next
+          </Button>
+        </div>
+      </article>
+
+
+    </div>
+
+    {popular.length > 0 ? (
+        <section className="bg-white">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-[80px] lg:py-20">
+            <h2 className="font-display text-[26px] font-semibold text-heading lg:text-[32px]">
+              Popular Post
+            </h2>
+            <div className="mt-10 grid gap-x-8 gap-y-14 md:grid-cols-3">
+              {popular.slice(0, 6).map((item) => (
+                <InsightCard key={item.slug} item={item} square />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <NewsletterCta />
+    </>
   );
 }
