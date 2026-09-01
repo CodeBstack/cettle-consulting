@@ -46,7 +46,7 @@ export default async function WorkArticle({ params }: Props) {
           </div>
 
           <div className="mt-12 space-y-3">
-            <div className="relative aspect-[16/7] min-h-[240px] overflow-hidden lg:min-h-[380px]">
+            <div className="relative aspect-[16/9] min-h-[200px] overflow-hidden sm:aspect-[16/7] sm:min-h-[240px] lg:min-h-[380px]">
               <Image
                 src={hero}
                 alt=""
@@ -58,7 +58,7 @@ export default async function WorkArticle({ params }: Props) {
             <div className="grid grid-cols-3 gap-3">
               {[hero, third, fourth].map((src) => (
                 <div key={src} className="relative aspect-[4/3] overflow-hidden">
-                  <Image src={src} alt="" fill className="object-cover" sizes="33vw" />
+              sizes="(min-width: 768px) 33vw, 33vw"
                 </div>
               ))}
             </div>

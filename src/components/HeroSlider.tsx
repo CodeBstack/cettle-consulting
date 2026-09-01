@@ -18,7 +18,7 @@ export function HeroSlider() {
   }, [index, go]);
 
   return (
-    <section className="relative h-[720px] overflow-hidden lg:h-[836px]">
+    <section className="relative h-[min(70vh,560px)] overflow-hidden lg:h-[836px]">
       {heroBackgrounds.map((item, i) => (
         <Image
           key={item.src}
@@ -28,7 +28,7 @@ export function HeroSlider() {
           priority={i === 0}
           unoptimized
           sizes="100vw"
-          className={`object-cover transition-opacity duration-[1400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          className={`h-full w-full object-cover transition-opacity duration-[1400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         />

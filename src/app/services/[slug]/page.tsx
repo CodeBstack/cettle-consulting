@@ -23,13 +23,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function ClipIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden>
-      <rect x="6" y="3" width="10" height="3" rx="0.6" stroke="#1b2a4a" strokeWidth="1.5" />
-      <rect x="4" y="5" width="14" height="14" rx="1.2" stroke="#1b2a4a" strokeWidth="1.5" />
-      <path d="M7.5 10h7M7.5 13h7M7.5 16h4.5" stroke="#1b2a4a" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
+    // <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden>
+    //   <rect x="6" y="3" width="10" height="3" rx="0.6" stroke="#1b2a4a" strokeWidth="1.5" />
+    //   <rect x="4" y="5" width="14" height="14" rx="1.2" stroke="#1b2a4a" strokeWidth="1.5" />
+    //   <path d="M7.5 10h7M7.5 13h7M7.5 16h4.5" stroke="#1b2a4a" strokeWidth="1.5" strokeLinecap="round" />
+    // </svg>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_90_177)">
+<path d="M5.82203 1.16431H1.16441C0.521654 1.16431 0 1.68596 0 2.32871V25.6168C0 26.2596 0.521654 26.7813 1.16441 26.7813H5.82203V1.16431Z" fill="#444444"/>
+<path d="M8.15039 1.16431V26.7813H26.7809C27.4237 26.7813 27.9453 26.2596 27.9453 25.6168V2.32871C27.9453 1.68596 27.4237 1.16431 26.7809 1.16431H8.15039ZM12.808 5.82193H16.3012V8.15075H12.808V5.82193ZM16.3012 22.1236H12.808V19.7948H16.3012V22.1236ZM19.7945 17.466H15.1368V15.1372H19.7945V17.466ZM23.2877 12.8084H16.3012V10.4796H23.2877V12.8084Z" fill="#444444"/>
+</g>
+<defs>
+<clipPath id="clip0_90_177">
+<rect width="27.9458" height="27.9458" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
   );
 }
+
 
 export default async function PracticePage({ params }: Props) {
   const { slug } = await params;
@@ -42,14 +55,14 @@ export default async function PracticePage({ params }: Props) {
     <>
       <section className="overflow-hidden bg-[#E6E7E8]">
         <div className="pt-10 lgpt-20 grid lg:grid-cols-2 items-start lg:items-stretch">
-          <div className="relative min-h-[360px] bg-[#1a1a1a] lg:min-h-[680px]">
+          <div className="relative min-h-[260px] w-full overflow-hidden bg-[#1a1a1a] lg:min-h-[680px]">
             <Image
               src={item.heroImage}
               alt={item.imageAlt}
               fill
               priority
               className={`object-cover ${item.heroObject}`}
-              sizes="50vw"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
           <div className="relative flex flex-col items-start pt-12 pr-8 pb-20 pl-8 sm:pl-12 lg:pt-[120px] lg:pr-16 lg:pb-24 lg:pl-[64px] xl:pr-24">
@@ -167,15 +180,13 @@ export default async function PracticePage({ params }: Props) {
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-[#3d5a2a] to-lime" />
         <div className="navy-mesh absolute inset-0 opacity-25 mix-blend-overlay" />
         <div className="relative site-pad flex flex-col gap-8 py-10 sm:flex-row sm:items-center sm:justify-between md:py-12">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-16">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-16">
             <h2 className="shrink-0 text-[28px] font-semibold tracking-[-0.03em] text-white md:text-[36px]">
               Who this is for
             </h2>
-            <ul className="space-y-1 text-[13px] leading-6 text-white md:text-[14px]">
-              {item.audience.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
+            <p className="max-w-[520px] text-[14px] leading-[1.7] text-white md:text-[15px]">
+              {item.audience.join(" ")}
+            </p>
           </div>
           <Button
             href={servicePath(next.slug)}

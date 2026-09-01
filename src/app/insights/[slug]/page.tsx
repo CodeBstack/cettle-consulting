@@ -6,7 +6,6 @@ import { InsightCard, InsightMeta } from "@/components/InsightCard";
 import { ChevronLeftSmall } from "@/components/icons";
 import { getInsight, getNextInsight, insights } from "@/data/site";
 import { NewsletterCta } from "@/components/NewsletterCta";
-import { log } from "console";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -66,7 +65,7 @@ filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
             fill
             priority
             className="object-cover"
-            sizes="980px"
+            sizes="(min-width: 1024px) 980px, 100vw"
           />
         </div>
 
@@ -104,7 +103,7 @@ filtered.length > 4 ? filtered.slice(filtered.length > 7 ? 3 : 1, 10) : [];
             alt=""
             fill
             className="object-cover"
-            sizes="980px"
+            sizes="(min-width: 1024px) 980px, 100vw"
           />
         </div>
 

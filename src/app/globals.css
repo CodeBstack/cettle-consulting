@@ -58,6 +58,11 @@ html {
   scroll-behavior: auto;
 }
 
+img,
+video {
+  max-width: 100%;
+}
+
 body {
   background: #fff;
   color: var(--heading);

@@ -5,7 +5,7 @@ export function WorkHero() {
   return (
     <section className="bg-navy">
       <div className="relative">
-        <div className="relative h-[420px] overflow-hidden lg:h-[560px]">
+        <div className="relative h-[280px] w-full overflow-hidden sm:h-[420px] lg:h-[560px]">
           <Image
             src="/images/works-hero.jpg"
             alt="Hands using a tablet in a dimly lit office"
@@ -16,7 +16,7 @@ export function WorkHero() {
           />
         </div>
         <div className="pointer-events-none absolute inset-0">
-          <div className="pointer-events-auto absolute right-0 bottom-0 w-[min(100%,920px)] translate-y-[38%] bg-white px-8 py-10 sm:px-12 lg:w-[62%] lg:px-16 lg:py-14">
+          <div className="pointer-events-auto absolute inset-x-0 bottom-0 w-full translate-y-[38%] bg-white px-6 py-8 sm:inset-x-auto sm:right-0 sm:w-[min(100%,920px)] sm:px-12 sm:py-10 lg:w-[62%] lg:px-16 lg:py-14">
             <p className="text-[15px] font-semibold text-navy">Works/Events</p>
             <h1 className="mt-4 max-w-[640px] text-[28px] leading-[1.2] font-medium tracking-[-0.02em] text-navy sm:text-[36px] lg:text-[44px]">
               What we were asked to solve, what we did, and what changed

@@ -34,7 +34,7 @@ export function NewsletterCta() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="relative h-[240px] lg:h-[340px]">
+        <div className="relative h-[180px] w-full overflow-hidden sm:h-[240px] lg:h-[340px]">
         <Image
           src="/images/insights-newsletter-desk.jpg"
           alt="Professional working at a desk"
@@ -59,7 +59,7 @@ export function NewsletterCta() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="mx-auto mt-8 flex max-w-[500px] flex-col gap-2.5 sm:flex-row sm:items-stretch"
+              className="mx-auto mt-8 flex w-full max-w-[500px] flex-col gap-2.5 sm:flex-row sm:items-stretch"
             >
               <label className="sr-only" htmlFor="insights-email">
                 Your Email
@@ -70,12 +70,12 @@ export function NewsletterCta() {
                 type="email"
                 required
                 placeholder="Your Email"
-                className="h-12 flex-1 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0]"
+                className="h-14 w-full min-w-0 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0] sm:h-12 sm:flex-1"
               />
               <button
                 type="submit"
                 disabled={pending}
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-[4px] bg-navy px-7 text-[14px] font-medium text-white transition hover:bg-navy-deep disabled:opacity-60"
+                className="inline-flex h-14 w-full shrink-0 items-center justify-center rounded-[4px] bg-navy px-7 text-[14px] font-medium text-white transition hover:bg-navy-deep disabled:opacity-60 sm:h-12 sm:w-auto"
               >
                 {pending ? "Sending…" : "Read More"}
               </button>

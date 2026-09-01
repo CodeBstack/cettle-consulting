@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto mt-10 grid max-w-[1440px] lg:grid-cols-[611px_1fr]">
-          <div className="relative min-h-[320px] lg:h-[429px]">
+          <div className="relative min-h-[240px] w-full overflow-hidden lg:h-[429px]">
             <Image
               src="/images/misunderstood.jpg"
               alt="Team collaborating around a laptop"
@@ -144,8 +144,8 @@ export default function Home() {
           </div>
           <div className="mt-[78px] grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
-              <article key={step.title} className="relative h-[374px] overflow-hidden">
-                <Image src={step.image} alt="" fill className="object-cover" sizes="284px" />
+              <article key={step.title} className="relative h-[260px] overflow-hidden sm:h-[320px] lg:h-[374px]">
+                <Image src={step.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
                 <div className="absolute inset-x-0 bottom-0 bg-navy/92 px-7 py-6 text-white">
                   <h3 className="font-display text-[20px] font-semibold">{step.title}</h3>
                   <p className="mt-2 text-[12px] leading-4 font-light text-white/95">
@@ -165,7 +165,7 @@ export default function Home() {
 
       <section className="bg-navy">
         <div className="grid lg:grid-cols-[647px_1fr]">
-          <div className="relative min-h-[420px] lg:h-[653px]">
+          <div className="relative min-h-[280px] w-full overflow-hidden lg:h-[653px]">
             <Image
               src="/images/team.jpg"
               alt="Colleagues collaborating"

@@ -43,7 +43,7 @@ export function Team() {
                   <p className="mt-2 text-[13px] leading-5 text-navy">{person.title}</p>
                 </div>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="block px-5 py-3 text-[14px] text-white"
                   style={{
                     background: "linear-gradient(90deg, #1b2a4a 0%, #b5e61d 100%)",

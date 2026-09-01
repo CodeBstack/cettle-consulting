@@ -11,13 +11,13 @@ export function WorkCard({
 }) {
   return (
     <Link href={`/work/${item.slug}`} className="group relative block overflow-hidden">
-      <div className={`relative ${featured ? "aspect-[16/7] min-h-[280px] lg:min-h-[420px]" : "aspect-[16/10] min-h-[240px]"}`}>
+      <div className={`relative w-full overflow-hidden ${featured ? "aspect-[16/9] min-h-[200px] sm:aspect-[16/7] sm:min-h-[280px] lg:min-h-[420px]" : "aspect-[16/10] min-h-[180px] sm:min-h-[240px]"}`}>
         <Image
           src={item.cover}
           alt=""
           fill
           className="object-cover transition duration-700 group-hover:scale-105"
-          sizes={featured ? "100vw" : "50vw"}
+          sizes={featured ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
         <div
