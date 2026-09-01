@@ -70,7 +70,7 @@ export function NewsletterCta() {
                 type="email"
                 required
                 placeholder="Your Email"
-                className="h-12 flex-1 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0]"
+                className="h-14 w-full flex-1 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0] sm:h12"
               />
               <button
                 type="submit"

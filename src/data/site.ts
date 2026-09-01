@@ -38,7 +38,7 @@ export const socialLinks = [
   {
     label: "Instagram",
     icon: "instagram" as const,
-    href: "https://www.instagram.com/cettleconsulting?igsi=MWlzOHlrcW0yOXl3NQ%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/cettleconsulting/",
   },
 ] as const;
 

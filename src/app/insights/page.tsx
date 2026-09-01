@@ -65,13 +65,16 @@ export default async function InsightsPage({
           </div>
         </div>
 
-        <div className="mx-auto max-w-[1440px] px-6 pt-28 pb-12 lg:px-[80px] lg:pt-36 lg:pb-16">
+        <div
+          id="posts"
+          className="scroll-mt-[88px] mx-auto max-w-[1440px] px-6 pt-28 pb-12 lg:px-[80px] lg:pt-36 lg:pb-16"
+        >
           <InsightsFilters active={active} />
         </div>
       </section>
 
       {featured ? (
-        <section id="posts" className="scroll-mt-[88px] bg-[#ececec]">
+        <section className="bg-[#ececec]">
           <div className="mx-auto max-w-[1440px] px-6 pb-16 lg:px-[80px] lg:pb-20">
             <h2 className="text-[22px] font-semibold text-heading lg:text-[26px]">
               Our Recent Post

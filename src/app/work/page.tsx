@@ -27,7 +27,7 @@ export default async function WorkPage({
   return (
     <>
       <WorkHero />
-      <section className="bg-navy pb-20">
+      <section id="work-grid" className="scroll-mt-[88px] bg-navy pb-20">
         <div className="site-pad">
           <WorkFilters active={active} />
           {featured ? (
