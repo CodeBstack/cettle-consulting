@@ -22,13 +22,35 @@ export type WorkItem = {
 
 export const workItems: WorkItem[] = [
   {
+    slug: "society-of-energy-editors-inaugural-seminar",
+    category: "Events and Convening",
+    label: "EVENTS",
+    date: "2 September 2026",
+    title: "Society of Energy Editors, inaugural seminar",
+    excerpt:
+      "Reporting an evolving energy industry needs more than a packed agenda. The room has to leave editors with language they will actually file.",
+    body: [
+      "The Society of Energy Editors convened its inaugural seminar on 2 September 2026 under the theme “Reporting Evolving Industry: The Nigerian Experience.” The brief was a serious working room — not a highlight reel — where editors could hear a clear argument about the energy landscape, press the speaker with live questions, and leave with sharper judgment.",
+      "Dr. Charles Ebereonwu delivered the key presentation. The session was designed to hold under unscripted questions: deep industry context, practical media implications, and enough structure that the day still felt like work rather than theatre.",
+      "Participant feedback was unambiguous. One attendee wrote: “Your presentation provided very deep insights and certainly gave us more than enough food for thought. It is abundantly obvious that your learning and experience have not been wasted at all. You did absolute justice to the topic. Well done!”",
+      "That is the standard we design to. A hall is easy to fill. A room that still gets cited when editors talk about what serious coverage looks like is the harder brief — and the one that matters.",
+    ],
+    cover: "/images/testimonial-see-speaking.jpg",
+    gallery: [
+      "/images/testimonial-see-speaking.jpg",
+      "/images/testimonial-see-presenting.jpg",
+      "/images/testimonial-see-group.jpg",
+      "/images/testimonial-see-room.jpg",
+    ],
+  },
+  {
     slug: "naec-chevron-capacity-training",
     category: "Events and Convening",
     label: "EVENTS",
     date: "18 March 2023",
-    title: "How to make a Game look more attractive with New VR & AI Technology",
+    title: "NAEC media capacity training, a room that held",
     excerpt:
-      "Google has been investing in AI for many years and bringing its benefits to individuals, businesses and communities. Whether it’s publishing state-of-the-art research, building helpful products or developing tools and resources that enable others, we’re committed to making AI accessible to everyone.",
+      "A hall is easy to fill. The harder brief is a room where correspondents ask unscripted questions and leave with language they will actually file.",
     body: [
       "The Association of Energy Correspondents of Nigeria needed a day that did more than fill a hall. The brief was a room in which correspondents could hear a serious argument about the energy landscape, ask unscripted questions, and leave with language they would actually file.",
       "Cettle designed the guest architecture, the run of show, and the briefing so Dr. Charles Ebereonwu’s session could hold under live questions. The result was not a highlight reel. It was a convening the association still cites when it talks about what a serious room looks like.",

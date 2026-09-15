@@ -6,12 +6,14 @@ type SiteFormPayload = {
   message: string;
   subject: string;
   website?: string;
+  phone?: string;
 };
 
 export async function submitSiteForm(payload: SiteFormPayload) {
   const body = {
     name: payload.name,
     email: payload.email,
+    phone: payload.phone ?? "",
     website: payload.website ?? "",
     message: payload.message,
     _subject: payload.subject,

@@ -15,15 +15,22 @@ export function WhoWeWorkWith() {
         <h2 className="font-display text-[36px] leading-tight font-light text-navy">
           Who we work with.
         </h2>
-        <div className="mt-[38px] grid lg:grid-cols-[584px_555px] lg:gap-px">
-          <div className="relative min-h-[220px] w-full overflow-hidden lg:h-[320px]">
-            <Image
-              src={current.image}
-              alt=""
-              fill
-              className="object-cover transition-opacity duration-700"
-              sizes="(min-width: 1024px) 584px, 100vw"
-            />
+        <div className="mt-[38px] grid lg:grid-cols-[584px_555px] lg:items-stretch lg:gap-px">
+          <div className="relative h-[220px] w-full overflow-hidden sm:h-[280px] lg:h-full lg:min-h-[320px]">
+            {audiences.map((item, i) => (
+              <Image
+                key={item.title}
+                src={item.image}
+                alt=""
+                fill
+                priority={i === 0}
+                className={`object-cover transition-opacity duration-700 ${
+                  i === active ? "opacity-100" : "opacity-0"
+                }`}
+                sizes="(min-width: 1024px) 584px, 100vw"
+              />
+            ))}
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy/85 to-transparent" />
             <p className="absolute bottom-8 left-8 font-display text-[20px] font-semibold text-surface">
               {current.title}
             </p>
@@ -36,6 +43,7 @@ export function WhoWeWorkWith() {
                   key={item.title}
                   type="button"
                   onClick={() => setActive(i)}
+                  aria-pressed={selected}
                   className={`flex gap-3 px-5 py-5 text-left transition-colors duration-300 ${
                     selected ? "bg-navy text-white" : "bg-surface-2 text-navy"
                   }`}

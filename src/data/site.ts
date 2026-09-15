@@ -43,10 +43,30 @@ export const socialLinks = [
 ] as const;
 
 export const heroBackgrounds = [
-  { src: "/images/hero-1.jpg", alt: "Glass and steel architecture against a blue sky" },
-  { src: "/images/hero-2.jpg", alt: "Looking up into a dark architectural dome" },
-  { src: "/images/hero-3.jpg", alt: "White geometric building facade" },
-  { src: "/images/hero-4.jpg", alt: "Dark vertical architectural fins at dusk" },
+  {
+    src: "/images/hero-1.jpg",
+    alt: "Glass and steel architecture against a blue sky",
+    theme: "dark" as const,
+    objectPosition: "object-[center_40%]",
+  },
+  {
+    src: "/images/hero-2.jpg",
+    alt: "Looking up into a dark architectural dome",
+    theme: "dark" as const,
+    objectPosition: "object-[center_45%]",
+  },
+  {
+    src: "/images/hero-3.jpg",
+    alt: "White geometric building facade",
+    theme: "light" as const,
+    objectPosition: "object-[right_center]",
+  },
+  {
+    src: "/images/hero-4.jpg",
+    alt: "Dark vertical architectural fins at dusk",
+    theme: "dark" as const,
+    objectPosition: "object-[center_35%]",
+  },
 ];
 
 export const pillars = [
@@ -65,9 +85,18 @@ export const pillars = [
 ];
 
 export const frictionPoints = [
-  "The message is unclear. Ask five members of staff what the business does and you get five answers, all of them partly right.",
-  "The leaders avoid the microphone. Interviews, town halls, and investor rooms are treated as risks to survive instead of platforms to use.",
-  "The crisis arrives before the plan. The response gets drafted in public, under pressure, by whoever is available.",
+  {
+    title: "The message is unclear.",
+    copy: "Ask five members of staff what the business does and you get five answers, all of them partly right.",
+  },
+  {
+    title: "The leaders avoid the microphone.",
+    copy: "Interviews, town halls, and investor rooms are treated as risks to survive instead of platforms to use.",
+  },
+  {
+    title: "The crisis arrives before the plan.",
+    copy: "The response gets drafted in public, under pressure, by whoever is available.",
+  },
 ];
 
 export const practices = [
@@ -133,12 +162,12 @@ export const audiences = [
   {
     title: "Executives and senior professionals",
     copy: "You are already good at the work. The next level is being understood, quoted, and followed.",
-    image: "/images/building.jpg",
+    image: "/images/work-event-podium.jpg",
   },
   {
     title: "Associations, agencies, and event owners",
     copy: "You have an audience to convene and a reputation riding on how the day runs.",
-    image: "/images/building.jpg",
+    image: "/images/work-event-group.jpg",
   },
 ];
 
@@ -150,6 +179,13 @@ export const stats = [
 ];
 
 export const testimonials = [
+  {
+    quote:
+      "Your presentation provided very deep insights and certainly gave us more than enough food for thought. It is abundantly obvious that your learning and experience have not been wasted at all. You did absolute justice to the topic. Well done!",
+    name: "Participant",
+    role: "Society of Energy Editors Inaugural Seminar",
+    avatar: "/images/avatar-charles-see.jpg",
+  },
   {
     quote:
       "Dr. Charles Ebereonwu delivered an insightful, engaging, and highly impactful session during our Chevron Capacity Training programme. His depth of knowledge, practical industry expertise, and ability to communicate complex issues clearly left a lasting impression on our members. The feedback we received was overwhelmingly positive, with participants appreciating the valuable perspectives he shared on the evolving energy landscape and the role of effective media coverage. We are grateful for his contribution and look forward to future opportunities to work with him.",

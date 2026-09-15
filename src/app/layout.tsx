@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { MotionShell } from "@/components/MotionShell";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
@@ -31,7 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-white font-sans text-heading">
         <ScrollToTop />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <MotionShell>{children}</MotionShell>
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,8 +1,14 @@
 "use client";
 
 import { FormEvent, useLayoutEffect, useRef, useState } from "react";
-import { ArrowRight } from "./icons";
+import {
+  isValidEmail,
+  isValidPhone,
+  isValidWebsite,
+  normalizeWebsite,
+} from "@/lib/formValidation";
 import { submitSiteForm } from "@/lib/submitForm";
+import { ArrowRight } from "./icons";
 
 function restoreMobileViewport() {
   const focused = document.activeElement;
@@ -44,13 +50,43 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
     const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
-    const website = String(data.get("website") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const websiteRaw = String(data.get("website") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
+
+    if (!name) {
+      setError("Please enter your name.");
+      setPending(false);
+      return;
+    }
+    if (!isValidEmail(email)) {
+      setError("Please enter a valid email address.");
+      setPending(false);
+      return;
+    }
+    if (!isValidPhone(phone)) {
+      setError("Please enter a valid phone number.");
+      setPending(false);
+      return;
+    }
+    if (!isValidWebsite(websiteRaw)) {
+      setError("Please enter a valid website URL (e.g. https://example.com).");
+      setPending(false);
+      return;
+    }
+    if (!message) {
+      setError("Please enter a message.");
+      setPending(false);
+      return;
+    }
+
+    const website = normalizeWebsite(websiteRaw);
 
     try {
       await submitSiteForm({
         name,
         email,
+        phone,
         website,
         message,
         subject: `Cettle Consulting enquiry from ${name}`,
@@ -82,10 +118,39 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
 
   return (
     <div ref={panelRef} className="scroll-mt-28">
-      <form onSubmit={onSubmit} className="relative space-y-5">
-        <Field label="Name" name="name" required />
-        <Field label="email" name="email" type="email" required />
-        <Field label="Website" name="website" />
+      <form onSubmit={onSubmit} noValidate className="relative space-y-5">
+        <Field
+          label="Name"
+          name="name"
+          type="text"
+          autoComplete="name"
+          required
+        />
+        <Field
+          label="Email"
+          name="email"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          placeholder="you@company.com"
+          required
+        />
+        <Field
+          label="Phone"
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          placeholder="+234 800 000 0000"
+        />
+        <Field
+          label="Website"
+          name="website"
+          type="url"
+          inputMode="url"
+          autoComplete="url"
+          placeholder="https://example.com"
+        />
         <label className="block">
           <span className="text-[13.5px] text-[#999fae]">
             Message<span className="text-[#eb5757]">*</span>
@@ -94,6 +159,7 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
             name="message"
             required
             rows={4}
+            autoComplete="off"
             className="mt-1 w-full border border-[#e0e0e0] bg-white px-3 py-2 text-[16px] leading-6 text-heading outline-none focus:border-navy"
           />
         </label>
@@ -116,11 +182,17 @@ function Field({
   name,
   type = "text",
   required,
+  inputMode,
+  autoComplete,
+  placeholder,
 }: {
   label: string;
   name: string;
-  type?: string;
+  type?: "text" | "email" | "tel" | "url";
   required?: boolean;
+  inputMode?: "text" | "email" | "tel" | "url";
+  autoComplete?: string;
+  placeholder?: string;
 }) {
   return (
     <label className="block">
@@ -132,6 +204,9 @@ function Field({
         required={required}
         type={type}
         name={name}
+        inputMode={inputMode}
+        autoComplete={autoComplete}
+        placeholder={placeholder}
         className="mt-1 h-11 w-full border border-[#e0e0e0] bg-white px-3 text-[16px] text-heading outline-none focus:border-navy"
       />
     </label>

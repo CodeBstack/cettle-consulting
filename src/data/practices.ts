@@ -21,6 +21,7 @@ export type PracticeDetail = {
     steps: { title: string; body: string }[];
   };
   deliverables: string[];
+  deliverablesImage: string;
   audience: string[];
 };
 
@@ -93,6 +94,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Media list and outreach plan",
       "Perception baseline report and quarterly review against it",
     ],
+    deliverablesImage: "/images/practice-mosaic.jpg",
     audience: [
       "Organisations with a public, a regulator, or a board.",
       "Businesses entering a new market or a funding round.",
@@ -167,6 +169,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Cohort report to the programme sponsor, with observations and recommendations",
       "Certificates of completion where required",
     ],
+    deliverablesImage: "/images/practice-leadership.jpg",
     audience: [
       "Organisations building a leadership bench.",
       "Human resources and learning teams with a budget and a capability gap.",
@@ -235,12 +238,13 @@ export const practiceDetails: PracticeDetail[] = [
       ],
     },
     deliverables: [
-      "Message architecture document, covering core narrative, proof points, and approved language",
-      "Crisis communication playbook with scenarios, holding statements, and an escalation chain",
-      "Spokesperson protocol naming who speaks on which subject",
-      "Media list and outreach plan",
-      "Perception baseline report and quarterly review against it",
+      "Full programme design and run of show",
+      "Speaker briefing packs and session maps",
+      "Production plan with vendor and logistics coordination",
+      "On-site management and minute-by-minute direction",
+      "Post-event report with recordings, quotes, and reusable content assets",
     ],
+    deliverablesImage: "/images/practice-events.jpg",
     audience: [
       "Associations and professional bodies running an annual conference.",
       "Corporates convening staff, partners, or stakeholders.",
@@ -311,6 +315,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Engagement and content framework",
       "Internal briefing pack for staff adoption",
     ],
+    deliverablesImage: "/images/practice-brand.jpg",
     audience: [
       "Businesses that have grown past the story they started with.",
       "Firms entering a new market or a new category.",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroSlider } from "@/components/HeroSlider";
@@ -31,7 +32,7 @@ export default function Home() {
             {pillars.map((item, i) => (
               <article
                 key={item.title}
-                className={`p-2.5 ${i === 1 ? "bg-[#e9ecef]" : "bg-surface"}`}
+                className={`p-2.5 hover:bg-[#e9ecef] hover:cursor-pointer bg-surface`}
               >
                 <div className="p-2.5">
                   <h3 className="text-[14px] font-bold text-muted">{item.title}</h3>
@@ -59,27 +60,30 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="site-pad mt-10 grid lg:grid-cols-[611px_1fr]">
-          <div className="relative min-h-[240px] w-full overflow-hidden lg:h-[429px]">
+        <div className="mt-10 grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-stretch">
+          <div className="relative min-h-[260px] w-full overflow-hidden sm:min-h-[320px] lg:min-h-[440px]">
             <Image
               src="/images/misunderstood.jpg"
               alt="Team collaborating around a laptop"
               fill
-              className="object-cover"
-              sizes="611px"
+              className="object-cover object-[center_35%]"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
-          <div className="grid sm:grid-cols-3">
-            {frictionPoints.map((copy, i) => (
+          <div className="grid bg-lime sm:grid-cols-3 sm:divide-x sm:divide-navy/10">
+            {frictionPoints.map((item) => (
               <article
-                key={copy}
-                className={`flex flex-col gap-[43px] p-5 ${
-                  i === 1 ? "bg-lime-dark" : "bg-lime"
-                }`}
+                key={item.title}
+                className="group flex h-full flex-col gap-6 px-6 py-8 text-left transition-colors duration-300 hover:bg-lime-dark sm:px-7 sm:py-10 lg:gap-8 lg:px-8 lg:py-12"
               >
-                <AngleUp className="h-10 w-10" />
-                <p className="max-w-[185px] text-[12px] leading-[1.5] font-light text-navy">
-                  {copy}
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy/10 text-navy transition duration-300 group-hover:bg-navy group-hover:text-lime">
+                  <AngleUp className="h-6 w-6" />
+                </span>
+                <h3 className="min-h-[3.4em] font-display text-[16px] leading-snug font-semibold text-navy md:text-[17px]">
+                  {item.title}
+                </h3>
+                <p className="text-[13px] leading-[1.55] font-light text-navy/85 md:text-[14px] md:leading-[1.6]">
+                  {item.copy}
                 </p>
               </article>
             ))}
@@ -110,21 +114,17 @@ export default function Home() {
               <Link
                 key={item.slug}
                 href={`/services/${item.slug}`}
-                className={`flex h-[251px] flex-col justify-between p-[25px] transition hover:opacity-90 ${
-                  item.featured ? "bg-navy-mid text-white" : "bg-white text-navy"
-                }`}
+                className="flex h-[251px] flex-col justify-between bg-white p-[25px] text-left text-navy transition hover:bg-navy-mid hover:text-white hover:opacity-90"
               >
                 <PracticeIcon
                   name={item.icon}
-                  className={`h-[31px] w-[31px] ${item.featured ? "text-white" : "text-navy"}`}
+                  className="h-[31px] w-[31px]"
                 />
                 <div>
-                  <h3 className="font-display text-[20px] font-semibold leading-7">{item.title}</h3>
-                  <p
-                    className={`mt-2 text-[12px] leading-4 font-light ${
-                      item.featured ? "text-white" : "text-navy"
-                    }`}
-                  >
+                  <h3 className="min-h-14 font-display text-[20px] leading-7 font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[12px] leading-4 font-light">
                     {item.copy}
                   </p>
                 </div>
@@ -144,10 +144,10 @@ export default function Home() {
           </div>
           <div className="mt-[78px] grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
-              <article key={step.title} className="relative h-[260px] overflow-hidden sm:h-[320px] lg:h-[374px]">
+              <article key={step.title} className="relative h-[360px] overflow-hidden lg:h-[374px]">
                 <Image src={step.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
-                <div className="absolute inset-x-0 bottom-0 bg-navy/92 px-7 py-6 text-white">
-                  <h3 className="font-display text-[20px] font-semibold">{step.title}</h3>
+                <div className="absolute inset-x-0 bottom-0 flex h-[180px] flex-col bg-navy/92 px-7 py-6 text-white">
+                  <h3 className="font-display text-[20px] leading-7 font-semibold">{step.title}</h3>
                   <p className="mt-2 text-[12px] leading-4 font-light text-white/95">
                     {step.copy}
                   </p>
@@ -189,7 +189,7 @@ export default function Home() {
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <p className="font-display text-[48px] leading-none font-light text-lime">
-                    {stat.value}
+                    <AnimatedNumber value={stat.value} />
                   </p>
                   <p className="mt-1 max-w-[169px] text-[14px] font-light text-gray-4">
                     {stat.label}

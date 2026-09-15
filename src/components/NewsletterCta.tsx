@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { FormEvent, useState } from "react";
+import { isValidEmail } from "@/lib/formValidation";
 import { NewsletterWaves } from "./icons";
 import { submitSiteForm } from "@/lib/submitForm";
 
@@ -16,6 +17,12 @@ export function NewsletterCta() {
     setPending(true);
 
     const email = String(new FormData(event.currentTarget).get("email") ?? "").trim();
+
+    if (!isValidEmail(email)) {
+      setError("Please enter a valid email address.");
+      setPending(false);
+      return;
+    }
 
     try {
       await submitSiteForm({
@@ -59,6 +66,7 @@ export function NewsletterCta() {
           ) : (
             <form
               onSubmit={onSubmit}
+              noValidate
               className="mx-auto mt-8 flex w-full max-w-[500px] flex-col gap-2.5 sm:flex-row sm:items-stretch"
             >
               <label className="sr-only" htmlFor="insights-email">
@@ -68,6 +76,8 @@ export function NewsletterCta() {
                 id="insights-email"
                 name="email"
                 type="email"
+                inputMode="email"
+                autoComplete="email"
                 required
                 placeholder="Your Email"
                 className="h-14 w-full min-w-0 rounded-[4px] bg-white px-4 text-[16px] text-heading outline-none placeholder:text-[#b0b0b0] sm:h-12 sm:flex-1"

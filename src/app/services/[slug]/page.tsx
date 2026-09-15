@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/Button";
+import { WhatYouGet } from "@/components/WhatYouGet";
 import {
   getNextPractice,
   getPractice,
@@ -29,7 +30,7 @@ function ClipIcon() {
     //   <path d="M7.5 10h7M7.5 13h7M7.5 16h4.5" stroke="#1b2a4a" strokeWidth="1.5" strokeLinecap="round" />
     // </svg>
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_90_177)">
+<g clipPath="url(#clip0_90_177)">
 <path d="M5.82203 1.16431H1.16441C0.521654 1.16431 0 1.68596 0 2.32871V25.6168C0 26.2596 0.521654 26.7813 1.16441 26.7813H5.82203V1.16431Z" fill="#444444"/>
 <path d="M8.15039 1.16431V26.7813H26.7809C27.4237 26.7813 27.9453 26.2596 27.9453 25.6168V2.32871C27.9453 1.68596 27.4237 1.16431 26.7809 1.16431H8.15039ZM12.808 5.82193H16.3012V8.15075H12.808V5.82193ZM16.3012 22.1236H12.808V19.7948H16.3012V22.1236ZM19.7945 17.466H15.1368V15.1372H19.7945V17.466ZM23.2877 12.8084H16.3012V10.4796H23.2877V12.8084Z" fill="#444444"/>
 </g>
@@ -141,40 +142,11 @@ export default async function PracticePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#f3f3f3]">
-        <div className="grid lg:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)]">
-          <div className="relative min-h-[220px] lg:min-h-full">
-            <Image
-              src="/images/practice-mosaic.jpg"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="32vw"
-            />
-          </div>
-          <div className="px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
-            <h2 className="text-[28px] font-semibold tracking-[-0.03em] text-heading md:text-[40px]">
-              What you get
-            </h2>
-            <ul className="mt-8 space-y-4">
-              {item.deliverables.map((line, index) => (
-                <li key={line}>
-                  <p
-                    className={`bg-white px-6 py-5 textcenter text-[14px] leading-6 text-heading md:px-10 md:py-6 md:text-[16px]
-                       `}
-                  >
-                    <span
-                      className={`inline-block max-w-[36rem]  px-2 py-1`}
-                    >
-                      {line}
-                    </span>
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <WhatYouGet
+        image={item.deliverablesImage}
+        imageAlt={`${item.title} deliverables`}
+        deliverables={item.deliverables}
+      />
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-[#3d5a2a] to-lime" />

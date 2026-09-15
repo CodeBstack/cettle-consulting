@@ -23,7 +23,7 @@ export default async function WorkArticle({ params }: Props) {
   if (!item) notFound();
 
   const next = getNextWork(slug);
-  const [hero, , third, fourth] = item.gallery;
+  const [hero, second, third, fourth] = item.gallery;
 
   return (
     <>
@@ -56,9 +56,15 @@ export default async function WorkArticle({ params }: Props) {
               />
             </div>
             <div className="grid grid-cols-3 gap-3">
-              {[hero, third, fourth].map((src) => (
+              {[second, third, fourth].map((src) => (
                 <div key={src} className="relative aspect-[4/3] overflow-hidden">
-              sizes="(min-width: 768px) 33vw, 33vw"
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 33vw, 33vw"
+                  />
                 </div>
               ))}
             </div>
