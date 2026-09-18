@@ -41,7 +41,6 @@ const WAYS = [
     body: "Ongoing counsel on a monthly basis. We sit close enough to your leadership to see problems before they become public.",
     fit: "Organisations carrying continuous communication load or reputational exposure",
     icon: <IconSwap />,
-    tone: "grey" as const,
   },
   {
     titleTop: "Project",
@@ -49,15 +48,13 @@ const WAYS = [
     body: "Fixed scope, fixed fee, defined end date. A launch, a crisis plan, a repositioning, a conference.",
     fit: "A specific outcome with a deadline attached",
     icon: <IconBolt />,
-    tone: "green" as const,
   },
   {
     titleTop: "Training",
     titleBot: "programme",
     body: "Priced per cohort or per day, delivered in house or as open enrolment.",
-    icon: <IconBitcoin />,
     fit: "Building capability across a team rather than buying execution",
-    tone: "grey" as const,
+    icon: <IconBitcoin />,
   },
 ];
 
@@ -71,29 +68,27 @@ export function HowToWork() {
         <p className="mx-auto mt-3 max-w-[640px] text-center text-[15px] text-muted md:text-[17px]">
           Three ways in. Every one of them is scoped in writing before work begins
         </p>
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+        <div className="mt-12 flex flex-col gap-5 md:grid md:grid-cols-3 md:grid-rows-[auto_auto_1fr_auto_auto] md:gap-6">
           {WAYS.map((way) => (
             <article
               key={way.titleTop}
-              className={`flex min-h-[400px] flex-col px-7 py-8 md:min-h-[460px] md:px-8 md:py-9 ${
-                way.tone === "green" ? "bg-lime-mid" : "bg-chip"
-              }`}
+              className="flex flex-col bg-chip px-7 py-8 text-left transition-colors duration-300 hover:bg-lime-mid md:grid md:row-span-5 md:grid-rows-subgrid md:px-8 md:py-9"
             >
-              <div className="mb-8 grid h-10 w-10 place-items-center rounded-full bg-navy">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-navy">
                 {way.icon}
               </div>
-              <h3 className="text-[30px] leading-[1.08] font-semibold tracking-[-0.03em] text-heading md:text-[36px]">
+              <h3 className="mt-8 text-[30px] leading-[1.08] font-semibold tracking-[-0.03em] text-heading md:mt-8 md:text-[36px]">
                 {way.titleTop}
                 <br />
                 {way.titleBot}
               </h3>
-              <p className="mt-5 text-[14px] leading-6 text-heading/80 md:text-[15px]">{way.body}</p>
-              <div className="mt-auto pt-10">
-                <div className="mb-4 bg-lime-bar px-3 py-2 text-[13px] font-medium text-heading">
-                  Best for
-                </div>
-                <p className="text-[14px] leading-5 text-heading/85">{way.fit}</p>
+              <p className="mt-5 flex-1 text-[14px] leading-6 text-heading/80 md:mt-5 md:text-[15px]">
+                {way.body}
+              </p>
+              <div className="mt-8 bg-lime-bar px-3 py-2 text-[13px] font-medium text-heading md:mt-8">
+                Best for
               </div>
+              <p className="mt-4 text-[14px] leading-5 text-heading/85 md:mt-4">{way.fit}</p>
             </article>
           ))}
         </div>

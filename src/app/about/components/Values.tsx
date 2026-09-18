@@ -11,7 +11,6 @@ const VALUES = [
   {
     title: "Excellence",
     body: "We would rather deliver late and right than early and thin.",
-    highlight: true,
   },
   {
     title: "Growth",
@@ -44,9 +43,9 @@ export function Values() {
           {VALUES.map((item, index) => (
             <article
               key={item.title}
-              className={`border-b border-black/10 px-6 py-10 sm:px-10 ${
+              className={`border-b border-black/10 bg-transparent px-6 py-10 transition-colors duration-300 hover:bg-lime-card sm:px-10 ${
                 index % 2 === 0 ? "sm:border-r" : ""
-              } ${item.highlight ? "bg-lime-card" : "bg-transparent"}`}
+              }`}
             >
               <ValueIcon />
               <h3 className="mt-5 text-[22px] font-semibold text-navy">{item.title}</h3>

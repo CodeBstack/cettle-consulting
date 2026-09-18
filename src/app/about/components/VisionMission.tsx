@@ -1,10 +1,6 @@
 import Image from "next/image";
 
-function LimeCorner({
-  side,
-}: {
-  side: "right" | "left";
-}) {
+function LimeCorner({ side }: { side: "right" | "left" }) {
   return (
     <span
       aria-hidden
@@ -33,12 +29,9 @@ export function VisionMission() {
             </div>
           </div>
           <div className="min-w-0">
-            <div className="mb-7 flex items-center gap-5 mr-[calc(-1*clamp(20px,5.55vw,80px))]">
-              <h2 className="shrink-0 text-[22px] font-semibold text-lime md:text-[24px]">
-                Our Vision
-              </h2>
-              <span className="h-px flex-1 bg-white/35" />
-            </div>
+            <h2 className="mb-7 text-[22px] font-semibold text-lime md:text-[24px]">
+              Our Vision
+            </h2>
             <p className="max-w-[460px] text-[18px] leading-[1.5] font-light text-white md:text-[22px] md:leading-[1.45]">
               To help businesses and individuals grow through clear communication,
               practical training, and strategic support.
@@ -48,12 +41,9 @@ export function VisionMission() {
 
         <div className="grid items-center gap-12 md:grid-cols-[1fr_minmax(0,420px)] md:gap-16 lg:gap-24">
           <div className="md:order-1 md:text-right">
-            <div className="mb-7 flex items-center gap-5 ml-[calc(-1*clamp(20px,5.55vw,80px))]">
-              <span className="h-px flex-1 bg-white/35" />
-              <h2 className="shrink-0 text-[22px] font-semibold text-lime md:text-[24px]">
-                Our Mission
-              </h2>
-            </div>
+            <h2 className="mb-7 text-[22px] font-semibold text-lime md:text-[24px]">
+              Our Mission
+            </h2>
             <p className="ml-auto max-w-[460px] text-[18px] leading-[1.5] font-light text-white md:text-[22px] md:leading-[1.45]">
               To become one of Africa&apos;s most trusted consulting firms for
               communication, leadership, and professional development.

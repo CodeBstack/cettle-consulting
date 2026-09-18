@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
-import { firstServicePath, practiceDetails } from "@/data/practices";
+import { firstServicePath, practiceDetails, type PracticeDetail } from "@/data/practices";
+
+const GRID_ORDER = [
+  "events-and-convening",
+  "communication-and-reputation",
+  "leadership-and-executive-development",
+  "brand-and-audience-strategy",
+] as const;
 
 function PracticeCard({
   slug,
@@ -9,60 +16,57 @@ function PracticeCard({
   cardBody,
   image,
   imageAlt,
-  cardMin,
-}: (typeof practiceDetails)[number]) {
+}: PracticeDetail) {
   return (
     <Link
       href={`/services/${slug}`}
-      className={`group relative block w-full overflow-hidden bg-navy-deep ${cardMin}`}
+      className="group relative block min-h-[240px] overflow-hidden bg-navy-deep sm:min-h-[280px] lg:min-h-[320px]"
     >
       <Image
         src={image}
         alt={imageAlt}
         fill
         sizes="(min-width: 768px) 50vw, 100vw"
-        className="object-cover grayscale transition duration-700 group-hover:scale-105"
+        className="object-cover grayscale transition duration-700 group-hover:scale-[1.03]"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/45 to-navy-deep/20" />
-      <div className="relative z-10 max-w-[420px] px-7 py-8 md:px-8 md:py-9">
-        <h3 className="text-[22px] leading-snug font-semibold text-lime md:text-[26px]">{title}</h3>
-        <p className="mt-4 text-[13px] leading-6 text-white/95 md:text-[14px]">{cardBody}</p>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/25 transition duration-500 group-hover:from-black/70 group-hover:via-black/40" />
+      <div className="relative z-10 flex h-full flex-col px-6 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+        <h3 className="max-w-[20rem] text-[20px] leading-snug font-semibold text-lime sm:text-[22px] md:text-[24px] lg:text-[26px]">
+          {title}
+        </h3>
+        <p className="mt-3 max-w-[26rem] text-[12px] leading-[1.55] font-light text-white/95 sm:mt-4 sm:text-[13px] md:text-[14px] md:leading-6">
+          {cardBody}
+        </p>
       </div>
     </Link>
   );
 }
 
 export function Practices() {
-  const [comms, leadership, events, brand] = practiceDetails;
+  const bySlug = Object.fromEntries(practiceDetails.map((item) => [item.slug, item]));
+  const items = GRID_ORDER.map((slug) => bySlug[slug]).filter(Boolean);
 
   return (
-    <section id="practices" className="bg-[#f6f6f6]">
-      <div className="site-pad py-16 md:py-24">
-        <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-x-10 md:gap-y-0">
-          <div>
-            <PracticeCard {...comms} />
-          </div>
-          <div>
-            <h2 className="mb-10 max-w-[440px] text-[36px] leading-[1.12] font-semibold tracking-[-0.03em] text-navy md:mb-12 md:text-[52px]">
-              Four practices, built
-              <br />
-              <span className="font-medium text-together">to work</span> together.
-            </h2>
-            <PracticeCard {...leadership} />
-          </div>
-          <div className="relative md:mt-10 md:ml-14">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute -top-8 -left-10 hidden h-[calc(100%+64px)] w-[calc(100%+24px)] border border-dashed border-black/25 md:block"
-            />
-            <PracticeCard {...events} />
-          </div>
-          <div className="md:mt-10">
-            <PracticeCard {...brand} />
-          </div>
+    <section id="practices" className="bg-white">
+      <div className="site-pad py-14 sm:py-16 md:py-20 lg:py-24">
+        <h2 className="max-w-[34rem] text-[32px] leading-[1.15] font-light tracking-[-0.03em] text-[#1B2A4A] sm:text-[40px] md:max-w-[470px] md:text-[48px] lg:text-[52px]">
+          Four practices, built to work{" "}
+          <span className="font-light text-together">together.</span>
+        </h2>
+
+        <div className="mt-8 grid grid-cols-1 sm:mt-10 sm:grid-cols-2 md:mt-12">
+          {items.map((item) => (
+            <PracticeCard key={item.slug} {...item} />
+          ))}
         </div>
-        <div className="mt-10 md:mt-12">
-          <Button href={firstServicePath} variant="dark" arrow className="h-[38px] text-[12.5px] font-bold">
+
+        <div className="mt-8 sm:mt-10 md:mt-12">
+          <Button
+            href={firstServicePath}
+            variant="dark"
+            arrow
+            className="h-10 min-w-[140px] text-[13px] font-semibold sm:h-[38px] sm:text-[12.5px] sm:font-bold"
+          >
             Learn more
           </Button>
         </div>
