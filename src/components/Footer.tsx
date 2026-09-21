@@ -6,8 +6,8 @@ import { officePhone, officialEmails, socialLinks } from "@/data/site";
 
 const footerNav = [
   { href: "/", label: "Home" },
-  { href: "/contact", label: "Feedback" },
   { href: "/about", label: "About" },
+  { href: "/services/communication-and-reputation", label: "Services" },
   { href: "/insights", label: "Blog" },
   { href: "/work", label: "Project" },
   { href: "/contact", label: "Contact" },

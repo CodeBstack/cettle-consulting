@@ -39,7 +39,7 @@ export function Values() {
     <section className="bg-mist">
       <div className="site-pad py-16 md:py-20">
         <h2 className="mb-10 text-[28px] font-semibold text-navy md:text-[32px]">Our Values</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-0">
           {VALUES.map((item, index) => (
             <article
               key={item.title}

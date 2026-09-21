@@ -36,7 +36,7 @@ export default async function InsightsPage({
     <>
       <section className="bg-[#ececec]">
         <div className="relative">
-          <div className="relative h-[240px] w-full overflow-hidden sm:h-[420px] lg:h-[620px]">
+          <div className="relative h-[260px] w-full overflow-hidden sm:h-[420px] lg:h-[620px]">
             <Image
               src="/images/insights-hero.jpg"
               alt="Analyst reviewing a wall of digital screens"
@@ -47,11 +47,10 @@ export default async function InsightsPage({
             />
           </div>
 
-          <div className="pointer-events-none absolute inset-0">
-            <div className="site-pad relative h-full">
-              <div className="pointer-events-auto absolute inset-x-0 bottom-0 w-auto translate-y-[18%] bg-white px-6 py-8 sm:px-8 sm:py-9 lg:inset-x-auto lg:right-0 lg:w-[min(100%,560px)] lg:px-12 lg:py-12">
+          <div className="site-pad relative z-10 -mt-10 sm:-mt-0 sm:pointer-events-none sm:absolute sm:inset-0 sm:mt-0">
+            <div className="pointer-events-auto bg-white px-6 py-8 shadow-sm sm:absolute sm:inset-x-0 sm:bottom-0 sm:w-auto sm:translate-y-[18%] sm:px-8 sm:py-9 sm:shadow-none lg:inset-x-auto lg:right-0 lg:w-[min(100%,560px)] lg:px-12 lg:py-12">
               <p className="text-[13px] font-semibold text-navy">Insights</p>
-              <h1 className="mt-2 font-display text-[32px] leading-[1.12] font-semibold tracking-tight text-navy lg:text-[42px]">
+              <h1 className="mt-2 font-display text-[28px] leading-[1.15] font-semibold tracking-tight text-navy sm:text-[32px] lg:text-[42px]">
                 Ideas That Move Markets.
               </h1>
               <p className="mt-4 max-w-[440px] text-[14px] leading-6 text-[#8a8a8a]">
@@ -63,13 +62,12 @@ export default async function InsightsPage({
                 Read More
               </Button>
             </div>
-            </div>
           </div>
         </div>
 
         <div
           id="posts"
-          className="site-pad scroll-mt-[88px] pt-28 pb-12 lg:pt-36 lg:pb-16"
+          className="site-pad scroll-mt-[88px] pt-16 pb-12 sm:pt-28 lg:pt-36 lg:pb-16"
         >
           <InsightsFilters active={active} />
         </div>

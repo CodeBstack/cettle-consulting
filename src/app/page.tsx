@@ -28,7 +28,7 @@ export default function Home() {
           <h2 className="font-display max-w-[246px] text-[28px] leading-[1.35] font-semibold text-muted">
             Strategy, training, and execution under one roof.
           </h2>
-          <div className="grid sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-3 sm:gap-0">
             {pillars.map((item, i) => (
               <article
                 key={item.title}
@@ -70,7 +70,7 @@ export default function Home() {
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
-          <div className="grid bg-lime sm:grid-cols-3 sm:divide-x sm:divide-navy/10">
+          <div className="grid gap-4 bg-lime sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-navy/10">
             {frictionPoints.map((item) => (
               <article
                 key={item.title}
@@ -109,7 +109,7 @@ export default function Home() {
               Learn more
             </Button>
           </div>
-          <div className="grid sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-0">
             {practices.map((item) => (
               <Link
                 key={item.slug}
@@ -142,7 +142,7 @@ export default function Home() {
             </h2>
             <p className="text-[12px] font-light text-ink">Four steps.</p>
           </div>
-          <div className="mt-[78px] grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-[78px] grid gap-4 sm:grid-cols-2 sm:gap-0 lg:grid-cols-4">
             {processSteps.map((step) => (
               <article key={step.title} className="relative h-[360px] overflow-hidden lg:h-[374px]">
                 <Image src={step.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
