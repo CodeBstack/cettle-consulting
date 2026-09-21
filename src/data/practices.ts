@@ -41,28 +41,24 @@ export const practiceDetails: PracticeDetail[] = [
     cardMin: "min-h-[240px] md:min-h-[280px]",
     whatWeDo: [
       {
-        title: "Corporate communication strategy.",
-        body: "Message architecture, internal and external alignment, communication calendars, and a spokesperson protocol that names who speaks on what.",
+        title: "Corporate Communication",
+        body: "This is about helping a company speak with one clear voice. We help organisations speak right, so that every message, internal or external, builds trust instead of confusion.",
       },
       {
-        title: "Crisis communication.",
-        body: "Risk mapping, scenario playbooks, pre approved holding statements, live response support, and post incident review.",
+        title: "Crisis Communication",
+        body: "Every organisation will face a difficult moment at some point. It could be a mistake, a scandal, an accident, or bad press. What matters most is how you respond in the first few hours. We help businesses prepare ahead of time and guide them calmly through the storm, so they protect their reputation and come out stronger, not weaker.",
       },
       {
-        title: "Public relations.",
-        body: "Narrative development, media outreach, feature placement, and press materials that editors can actually use.",
+        title: "Public Relations / Reputation Management",
+        body: "This is about managing how the public sees and feels about a brand. From press releases to media engagement, we help organisations tell their story the right way. The focus is on the identification and segmentation of stakeholders as well as the crafting of specific messages that address the peculiar needs of each stakeholder.",
       },
       {
-        title: "Media relations and media training.",
-        body: "Journalist relationships, interview preparation, and on camera coaching for the people who will face the questions.",
+        title: "Media Relations",
+        body: "We help businesses and leaders build genuine, respectful relationships with the press, so their stories get told fairly and accurately. A cordial relationship with the media comes handy during times of crisis. Do not wait for a crisis before nurturing a win-win relationship with the media.",
       },
       {
-        title: "Reputation management.",
-        body: "Perception audits, monitoring, response frameworks, and recovery planning.",
-      },
-      {
-        title: "Stakeholder engagement.",
-        body: "Mapping and prioritisation, then engagement plans for regulators, communities, investors, and staff.",
+        title: "Stakeholder / Audience Engagement",
+        body: "It is not enough to just talk to your audience; you need to connect with them. We help brands understand what their audience truly cares about and create ways to keep them interested, involved, and loyal over time. This is a critical aspect of stakeholder management.",
       },
     ],
     engagement: {
@@ -116,28 +112,28 @@ export const practiceDetails: PracticeDetail[] = [
     cardMin: "min-h-[240px] md:min-h-[280px]",
     whatWeDo: [
       {
-        title: "Leadership training.",
-        body: "Cohort programmes for emerging, middle, and senior leaders, built around your actual operating context rather than a generic curriculum.",
+        title: "Leadership Training",
+        body: "Good leaders are not made overnight; they are nurtured over time through practice and experience. This training helps organisations prepare leaders who are ready to transform their organisations, maximise shareholder value, and position their organisations to dictate the future of their industry.",
       },
       {
-        title: "Executive coaching.",
-        body: "One to one engagements over an agreed cycle, with defined objectives and a written close out.",
+        title: "Executive Coaching",
+        body: "Through one-on-one coaching, we help executives build self-awareness, sharpen their leadership style, and navigate the pressures that come with senior roles.",
       },
       {
-        title: "Executive speech writing.",
-        body: "Keynotes, town halls, board addresses, and launch remarks written in the executive's own voice.",
+        title: "Executive Speech Writing",
+        body: "The right words, said the right way, can move an audience and shape how a leader is remembered. We craft speeches that reflect the leader's true voice and message, whether for a conference, a company event, or a public address. An effective speech is a key tool of audience engagement and stakeholder management.",
       },
       {
-        title: "Executive interviews and media preparation.",
-        body: "Message discipline, difficult question handling, and on camera presence.",
+        title: "Executive Interviews",
+        body: "An interview can either build a leader's credibility or expose them to unnecessary risk. We prepare executives ahead of media interviews and public appearances, helping them communicate their message clearly and confidently.",
       },
       {
-        title: "Professional development training.",
-        body: "Business writing, presentation, negotiation, client management, and internal communication.",
+        title: "Professional Development Training",
+        body: "We offer training programmes that help individuals build the skills, confidence, and habits needed to advance in their careers while staying relevant in their industries.",
       },
       {
-        title: "Entrepreneurship training.",
-        body: "For founder led businesses, accelerators, and business support programmes.",
+        title: "Entrepreneurship Training",
+        body: "Starting and running a business takes more than a good idea; it takes skill, structure, and the right mindset. We help equip intending and existing entrepreneurs with practical tools to plan, manage, and grow their businesses. Entrepreneurship is not the same thing as owning a business, although owning and running a successful business is a key attribute of entrepreneurship.",
       },
     ],
     engagement: {
@@ -191,28 +187,12 @@ export const practiceDetails: PracticeDetail[] = [
     cardMin: "min-h-[280px] md:min-h-[360px]",
     whatWeDo: [
       {
-        title: "Conference and summit management.",
-        body: "Theme and narrative, programme design, speaker curation, and full production management.",
+        title: "Events and Conference Management",
+        body: "From small workshops to large industry conferences, good events do not happen by accident; they are planned carefully from start to finish. We handle the full process, including logistics, programme design, speaker coordination, and on-the-ground execution, so every event runs smoothly and leaves a lasting impression.",
       },
       {
-        title: "Workshops and seminars.",
-        body: "One to one engagements over an agreed cycle, with defined objectives and a written close out.",
-      },
-      {
-        title: "Corporate and stakeholder events.",
-        body: "Launches, town halls, annual general meetings, and partner engagements.",
-      },
-      {
-        title: "Speaker curation and briefing.",
-        body: "The right voices, briefed properly, so that sessions build on each other instead of repeating.",
-      },
-      {
-        title: "Run of show and production management.",
-        body: "Minute by minute direction, vendor coordination, and on the day command.",
-      },
-      {
-        title: "Post event reporting and content.",
-        body: "The recordings, quotes, and insights turned into assets you use for the next twelve months.",
+        title: "Workshops and Seminars",
+        body: "We design and organise workshops and seminars that are not just informative but engaging, giving participants real skills they can apply immediately on the job.",
       },
     ],
     engagement: {
@@ -266,24 +246,12 @@ export const practiceDetails: PracticeDetail[] = [
     cardMin: "min-h-[260px] md:min-h-[320px]",
     whatWeDo: [
       {
-        title: "Brand positioning.",
-        body: "Category definition, differentiation, and the decision about what you will not be.",
+        title: "Brand Positioning",
+        body: "This is about making sure people understand exactly what makes your brand different and why it matters to them. We work with businesses to define that unique space in the market and communicate it clearly, so customers choose you over anyone else.",
       },
       {
-        title: "Message architecture.",
-        body: "The core narrative, the supporting proof points, and the language your whole organisation uses.",
-      },
-      {
-        title: "Audience research and segmentation.",
-        body: "Who is actually buying, what they believe now, and what would have to change.",
-      },
-      {
-        title: "Audience engagement strategy.",
-        body: "Channel selection, content direction, and a cadence your team can sustain.",
-      },
-      {
-        title: "Internal communication and adoption.",
-        body: "Positioning fails when staff have not been briefed. We treat internal rollout as part of the work, not as an afterthought.",
+        title: "Stakeholder / Audience Engagement",
+        body: "It is not enough to just talk to your audience; you need to connect with them. We help brands understand what their audience truly cares about and create ways to keep them interested, involved, and loyal over time. This is a critical aspect of stakeholder management.",
       },
     ],
     engagement: {

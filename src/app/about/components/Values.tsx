@@ -10,7 +10,7 @@ function ValueIcon() {
 const VALUES = [
   {
     title: "Excellence",
-    body: "We would rather deliver late and right than early and thin.",
+    body: "We deliver our best, regardless of the limitations.",
   },
   {
     title: "Growth",

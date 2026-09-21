@@ -70,7 +70,7 @@ export function HeroSlider() {
               variant={isLight ? "navy" : "mid"}
               className="h-11 min-w-[186px] px-5 text-[15px] font-medium"
             >
-              Book a Consultation
+              Contact Us
             </Button>
             {isLight ? (
               <Button
