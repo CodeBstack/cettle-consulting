@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
-      <LogoTicker />
+      {/* <LogoTicker /> */}
 
       <section className="bg-white">
         <div className="site-pad grid items-start gap-10 py-[78px] lg:grid-cols-[246px_845px] lg:justify-between">
