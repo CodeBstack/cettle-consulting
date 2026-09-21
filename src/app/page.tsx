@@ -70,19 +70,19 @@ export default function Home() {
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
-          <div className="grid gap-4 bg-lime sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-navy/10">
+          <div className="grid gap-3 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-navy/10 sm:bg-lime">
             {frictionPoints.map((item) => (
               <article
                 key={item.title}
-                className="group flex h-full flex-col gap-6 px-6 py-8 text-left transition-colors duration-300 hover:bg-lime-dark sm:px-7 sm:py-10 lg:gap-8 lg:px-8 lg:py-12"
+                className="group flex h-full flex-col gap-3 bg-lime px-6 py-6 text-left transition-colors duration-300 hover:bg-lime-dark sm:gap-4 sm:px-7 sm:py-10 lg:gap-5 lg:px-8 lg:py-12"
               >
                 <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy/10 text-navy transition duration-300 group-hover:bg-navy group-hover:text-lime">
                   <AngleUp className="h-6 w-6" />
                 </span>
-                <h3 className="min-h-[3.4em] font-display text-[16px] leading-snug font-semibold text-navy md:text-[17px]">
+                <h3 className="font-display text-[16px] leading-snug font-semibold text-navy sm:min-h-[3.4em] md:text-[17px]">
                   {item.title}
                 </h3>
-                <p className="text-[13px] leading-[1.55] font-light text-navy/85 md:text-[14px] md:leading-[1.6]">
+                <p className="text-[13px] leading-[1.5] font-light text-navy/85 md:text-[14px] md:leading-[1.6]">
                   {item.copy}
                 </p>
               </article>

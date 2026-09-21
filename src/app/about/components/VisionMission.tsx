@@ -33,8 +33,8 @@ export function VisionMission() {
               Our Vision
             </h2>
             <p className="max-w-[460px] text-[18px] leading-[1.5] font-light text-white md:text-[22px] md:leading-[1.45]">
-              To help businesses and individuals grow through clear communication,
-              practical training, and strategic support.
+              To become one of Africa&apos;s most trusted consulting firms for
+              communication, leadership, and professional development.
             </p>
           </div>
         </div>
@@ -45,8 +45,8 @@ export function VisionMission() {
               Our Mission
             </h2>
             <p className="ml-auto max-w-[460px] text-[18px] leading-[1.5] font-light text-white md:text-[22px] md:leading-[1.45]">
-              To become one of Africa&apos;s most trusted consulting firms for
-              communication, leadership, and professional development.
+              To help businesses and individuals grow through clear communication,
+              practical training, and strategic support.
             </p>
           </div>
           <div className="relative w-full pb-3 pl-3 md:order-2">

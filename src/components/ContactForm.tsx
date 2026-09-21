@@ -1,12 +1,7 @@
 "use client";
 
 import { FormEvent, useLayoutEffect, useRef, useState } from "react";
-import {
-  isValidEmail,
-  isValidPhone,
-  isValidWebsite,
-  normalizeWebsite,
-} from "@/lib/formValidation";
+import { isValidEmail } from "@/lib/formValidation";
 import { submitSiteForm } from "@/lib/submitForm";
 import { ArrowRight } from "./icons";
 
@@ -50,8 +45,7 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
     const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
-    const phone = String(data.get("phone") ?? "").trim();
-    const websiteRaw = String(data.get("website") ?? "").trim();
+    const service = String(data.get("service") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
     if (!name) {
@@ -64,13 +58,8 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
       setPending(false);
       return;
     }
-    if (!isValidPhone(phone)) {
-      setError("Please enter a valid phone number.");
-      setPending(false);
-      return;
-    }
-    if (!isValidWebsite(websiteRaw)) {
-      setError("Please enter a valid website URL (e.g. https://example.com).");
+    if (!service) {
+      setError("Please enter the service you need.");
       setPending(false);
       return;
     }
@@ -80,14 +69,11 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
       return;
     }
 
-    const website = normalizeWebsite(websiteRaw);
-
     try {
       await submitSiteForm({
         name,
         email,
-        phone,
-        website,
+        service,
         message,
         subject: `Cettle Consulting enquiry from ${name}`,
       });
@@ -119,13 +105,7 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <div ref={panelRef} className="scroll-mt-28">
       <form onSubmit={onSubmit} noValidate className="relative space-y-5">
-        <Field
-          label="Name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          required
-        />
+        <Field label="Name" name="name" type="text" autoComplete="name" required />
         <Field
           label="Email"
           name="email"
@@ -136,20 +116,12 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
           required
         />
         <Field
-          label="Phone"
-          name="phone"
-          type="tel"
-          inputMode="tel"
-          autoComplete="tel"
-          placeholder="+234 800 000 0000"
-        />
-        <Field
-          label="Website"
-          name="website"
-          type="url"
-          inputMode="url"
-          autoComplete="url"
-          placeholder="https://example.com"
+          label="The service you need:"
+          name="service"
+          type="text"
+          autoComplete="off"
+          placeholder="e.g. Communication and Reputation"
+          required
         />
         <label className="block">
           <span className="text-[13.5px] text-[#999fae]">
@@ -188,9 +160,9 @@ function Field({
 }: {
   label: string;
   name: string;
-  type?: "text" | "email" | "tel" | "url";
+  type?: "text" | "email";
   required?: boolean;
-  inputMode?: "text" | "email" | "tel" | "url";
+  inputMode?: "text" | "email";
   autoComplete?: string;
   placeholder?: string;
 }) {

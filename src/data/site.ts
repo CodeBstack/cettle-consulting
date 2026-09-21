@@ -9,14 +9,6 @@ export const navLinks = [
 
 export const officialEmails = [
   {
-    label: "Charlesebereonwu@cettleconsulting.com",
-    href: "mailto:charlesebereonwu@cettleconsulting.com",
-  },
-  {
-    label: "Princessanyanwu@cettleconsulting.com",
-    href: "mailto:princessanyanwu@cettleconsulting.com",
-  },
-  {
     label: "Info@cettleconsulting.com",
     href: "mailto:info@cettleconsulting.com",
   },
