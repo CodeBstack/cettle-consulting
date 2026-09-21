@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="bg-[#f8f9fa]">
+      <section id="services" className="scroll-mt-[88px] bg-[#f8f9fa]">
         <div className="site-pad grid gap-12 py-16 lg:grid-cols-[462px_579px] lg:items-start lg:justify-between">
           <div className="flex h-full flex-col justify-between">
             <div>
