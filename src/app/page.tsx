@@ -5,7 +5,7 @@ import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroSlider } from "@/components/HeroSlider";
 import { InsightsRow } from "@/components/InsightsRow";
-import { LogoTicker } from "@/components/LogoTicker";
+// import { LogoTicker } from "@/components/LogoTicker";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { WhoWeWorkWith } from "@/components/WhoWeWorkWith";
 import { AngleUp, PracticeIcon } from "@/components/icons";

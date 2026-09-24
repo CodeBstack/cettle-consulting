@@ -14,7 +14,7 @@ export const officialEmails = [
   },
 ] as const;
 
-export const contactInbox = "ssamuelolumide@gmail.com";
+export const contactInbox = "info@cettleconsulting.com";
 
 export const officePhone = {
   label: "0906 800 0571",
@@ -164,7 +164,7 @@ export const audiences = [
 ];
 
 export const stats = [
-  { value: "2.3k+", label: "Years of combined practice" },
+  { value: "25+", label: "Years of combined practice" },
   { value: "1200", label: "Professionals trained" },
   { value: "20+", label: "Events & conferences delivered" },
   { value: "12+", label: "Sectors served" },

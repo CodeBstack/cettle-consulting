@@ -66,7 +66,7 @@ export function Team() {
           </div>
           <div className="mt-8 flex justify-end">
             <Button href="/contact" variant="navy" className="h-11 min-w-[186px] px-6 text-[14px] font-medium">
-              Book a Consultation
+              Contact Us
             </Button>
           </div>
         </div>
