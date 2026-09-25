@@ -178,13 +178,13 @@ export const testimonials = [
     role: "Society of Energy Editors Inaugural Seminar",
     avatar: "/images/avatar-charles-see.jpg",
   },
-  // {
-  //   quote:
-  //     "Dr. Charles Ebereonwu delivered an insightful, engaging, and highly impactful session during our Chevron Capacity Training programme. His depth of knowledge, practical industry expertise, and ability to communicate complex issues clearly left a lasting impression on our members. The feedback we received was overwhelmingly positive, with participants appreciating the valuable perspectives he shared on the evolving energy landscape and the role of effective media coverage. We are grateful for his contribution and look forward to future opportunities to work with him.",
-  //   name: "Ugo Amadi",
-  //   role: "Association of Energy Correspondents of Nigeria (NAEC)",
-  //   avatar: "/images/avatar-ugo.jpg",
-  // },
+  {
+    quote:
+      "The presentation was highly insightful, engaging, and impactful. Members appreciated the depth of knowledge and practical insights on current energy industry dynamics and effective media coverage. The Association looks forward to future opportunities for collaboration.",
+    name: "Ugo Amadi",
+    role: "Association of Energy Correspondents of Nigeria (NAEC)",
+    avatar: "/images/avatar-ugo.jpg",
+  },
   // {
   //   quote:
   //     "Cettle did not give us a press release. They gave us a way of speaking that survived a difficult quarter and still sounded like us.",
