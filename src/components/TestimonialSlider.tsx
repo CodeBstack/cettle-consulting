@@ -63,13 +63,13 @@ export function TestimonialSlider() {
               {item.quote}
             </p>
             <div className="mt-6 flex flex-col items-center sm:mt-8">
-              <Image
+              {/* <Image
                 src={item.avatar}
                 alt=""
                 width={60}
                 height={60}
                 className="h-12 w-12 rounded-full object-cover sm:h-[60px] sm:w-[60px]"
-              />
+              /> */}
               <p className="mt-3 text-center text-[12px] font-semibold text-[#2d3139]">{item.name}</p>
               <p className="max-w-[22rem] text-center text-[10px] leading-4 text-muted-2 sm:max-w-none">
                 {item.role}

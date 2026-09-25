@@ -22,6 +22,26 @@ export type WorkItem = {
 
 export const workItems: WorkItem[] = [
   {
+    slug: "naec-chevron-capacity-training",
+    category: "Events and Convening",
+    label: "EVENTS",
+    date: "18 March 2023",
+    title: "NAEC media capacity training, a room that held",
+    excerpt:
+      "A hall is easy to fill. The harder brief is a room where correspondents ask unscripted questions and leave with language they will actually file.",
+    body: [
+      "The Association of Energy Correspondents of Nigeria needed a day that did more than fill a hall. The brief was a room in which correspondents could hear a serious argument about the energy landscape, ask unscripted questions, and leave with language they would actually file.",
+      "Cettle designed the guest architecture, the run of show, and the briefing so Dr. Charles Ebereonwu’s session could hold under live questions. The result was not a highlight reel. It was a convening the association still cites when it talks about what a serious room looks like.",
+    ],
+    cover: "/images/work-event-group.jpg",
+    gallery: [
+      "/images/work-event-group.jpg",
+      "/images/work-event-podium.png",
+      "/images/work-event-close.png",
+      "/images/work-event-open.png",
+    ],
+  },
+   {
     slug: "society-of-energy-editors-inaugural-seminar",
     category: "Events and Convening",
     label: "EVENTS",
@@ -43,26 +63,7 @@ export const workItems: WorkItem[] = [
       "/images/testimonial-see-room.jpg",
     ],
   },
-  {
-    slug: "naec-chevron-capacity-training",
-    category: "Events and Convening",
-    label: "EVENTS",
-    date: "18 March 2023",
-    title: "NAEC media capacity training, a room that held",
-    excerpt:
-      "A hall is easy to fill. The harder brief is a room where correspondents ask unscripted questions and leave with language they will actually file.",
-    body: [
-      "The Association of Energy Correspondents of Nigeria needed a day that did more than fill a hall. The brief was a room in which correspondents could hear a serious argument about the energy landscape, ask unscripted questions, and leave with language they would actually file.",
-      "Cettle designed the guest architecture, the run of show, and the briefing so Dr. Charles Ebereonwu’s session could hold under live questions. The result was not a highlight reel. It was a convening the association still cites when it talks about what a serious room looks like.",
-    ],
-    cover: "/images/work-event-group.jpg",
-    gallery: [
-      "/images/work-event-group.jpg",
-      "/images/work-event-podium.jpg",
-      "/images/work-event-close.jpg",
-      "/images/practice-events-hero.png",
-    ],
-  },
+  
   {
     slug: "national-lender-reputation-reset",
     category: "Reputation and Crisis",

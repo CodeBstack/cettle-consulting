@@ -62,8 +62,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/practice-studio.png",
-      photo: "/images/practice-laptop.png",
+      studio: "/images/studio-1.png",
+      photo: "/images/photo-1.png",
       steps: [
         {
           title: "Audit",
@@ -90,7 +90,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Media list and outreach plan",
       "Perception baseline report and quarterly review against it",
     ],
-    deliverablesImage: "/images/practice-mosaic.jpg",
+    deliverablesImage: "/images/what-you-get-1.png",
     audience: [
       "Organisations with a public, a regulator, or a board.",
       "Businesses entering a new market or a funding round.",
@@ -137,8 +137,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/practice-studio.png",
-      photo: "/images/practice-laptop.png",
+      studio: "/images/studio-2.png",
+      photo: "/images/photo-2.png",
       steps: [
         {
           title: "Needs assessment",
@@ -165,7 +165,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Cohort report to the programme sponsor, with observations and recommendations",
       "Certificates of completion where required",
     ],
-    deliverablesImage: "/images/practice-leadership.jpg",
+    deliverablesImage: "/images/what-you-get-2.png",
     audience: [
       "Organisations building a leadership bench.",
       "Human resources and learning teams with a budget and a capability gap.",
@@ -179,9 +179,9 @@ export const practiceDetails: PracticeDetail[] = [
     summary:
       "Conferences, training events, and corporate gatherings planned, produced, and run so that the outcome survives the day",
     image: "/images/practice-events.jpg",
-    heroImage: "/images/practice-events-hero.png",
-    heroObject: "object-[center_55%]",
-    imageAlt: "Circular auditorium seating",
+    heroImage: "/images/practice-events.jpg",
+    heroObject: "object-[center_45%]",
+    imageAlt: "Professionals collaborating around a laptop in a bright shared workspace",
     cardBody:
       "Conference and summit management, workshops and seminars, corporate and stakeholder events, speaker curation, run of show and production management",
     cardMin: "min-h-[280px] md:min-h-[360px]",
@@ -196,8 +196,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/practice-studio.png",
-      photo: "/images/practice-laptop.png",
+      studio: "/images/studio-3.png",
+      photo: "/images/photo-3.png",
       steps: [
         {
           title: "Objective setting.",
@@ -224,7 +224,7 @@ export const practiceDetails: PracticeDetail[] = [
       "On-site management and minute-by-minute direction",
       "Post-event report with recordings, quotes, and reusable content assets",
     ],
-    deliverablesImage: "/images/practice-events.jpg",
+    deliverablesImage: "/images/what-you-get-3.png",
     audience: [
       "Associations and professional bodies running an annual conference.",
       "Corporates convening staff, partners, or stakeholders.",
@@ -255,8 +255,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/practice-studio.png",
-      photo: "/images/practice-laptop.png",
+      studio: "/images/studio-4.png",
+      photo: "/images/photo-4.png",
       steps: [
         {
           title: "Discovery",
@@ -283,7 +283,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Engagement and content framework",
       "Internal briefing pack for staff adoption",
     ],
-    deliverablesImage: "/images/practice-brand.jpg",
+    deliverablesImage: "/images/what-you-get-4.png",
     audience: [
       "Businesses that have grown past the story they started with.",
       "Firms entering a new market or a new category.",
