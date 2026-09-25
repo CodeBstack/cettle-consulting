@@ -178,32 +178,32 @@ export const testimonials = [
     role: "Society of Energy Editors Inaugural Seminar",
     avatar: "/images/avatar-charles-see.jpg",
   },
+  // {
+  //   quote:
+  //     "Dr. Charles Ebereonwu delivered an insightful, engaging, and highly impactful session during our Chevron Capacity Training programme. His depth of knowledge, practical industry expertise, and ability to communicate complex issues clearly left a lasting impression on our members. The feedback we received was overwhelmingly positive, with participants appreciating the valuable perspectives he shared on the evolving energy landscape and the role of effective media coverage. We are grateful for his contribution and look forward to future opportunities to work with him.",
+  //   name: "Ugo Amadi",
+  //   role: "Association of Energy Correspondents of Nigeria (NAEC)",
+  //   avatar: "/images/avatar-ugo.jpg",
+  // },
+  // {
+  //   quote:
+  //     "Cettle did not give us a press release. They gave us a way of speaking that survived a difficult quarter and still sounded like us.",
+  //   name: "Adaeze Okonkwo",
+  //   role: "Chief Communications Officer, National lender",
+  //   avatar: "/images/avatar-ugo.jpg",
+  // },
+  // {
+  //   quote:
+  //     "The room they built for our leadership retreat was the first time the executive team heard the same story in the same language.",
+  //   name: "Ibrahim Bello",
+  //   role: "Managing Director, Energy group",
+  //   avatar: "/images/avatar-ugo.jpg",
+  // },
   {
     quote:
-      "Dr. Charles Ebereonwu delivered an insightful, engaging, and highly impactful session during our Chevron Capacity Training programme. His depth of knowledge, practical industry expertise, and ability to communicate complex issues clearly left a lasting impression on our members. The feedback we received was overwhelmingly positive, with participants appreciating the valuable perspectives he shared on the evolving energy landscape and the role of effective media coverage. We are grateful for his contribution and look forward to future opportunities to work with him.",
-    name: "Ugo Amadi",
-    role: "Association of Energy Correspondents of Nigeria (NAEC)",
-    avatar: "/images/avatar-ugo.jpg",
-  },
-  {
-    quote:
-      "Cettle did not give us a press release. They gave us a way of speaking that survived a difficult quarter and still sounded like us.",
-    name: "Adaeze Okonkwo",
-    role: "Chief Communications Officer, National lender",
-    avatar: "/images/avatar-ugo.jpg",
-  },
-  {
-    quote:
-      "The room they built for our leadership retreat was the first time the executive team heard the same story in the same language.",
-    name: "Ibrahim Bello",
-    role: "Managing Director, Energy group",
-    avatar: "/images/avatar-ugo.jpg",
-  },
-  {
-    quote:
-      "They treat convening as an operating system, not an event. The audience, the agenda, and the follow-through were designed as one piece of work.",
-    name: "Ngozi Amodu",
-    role: "Programme Director, Industry association",
+      "Dr Charles Ebereonwu is a gifted novelist whose talent and interest in the creative arts are evident in his literary works.",
+    name: "Saviour Nathan A. Agoro",
+    role: "The Dawn Journal",
     avatar: "/images/avatar-ugo.jpg",
   },
 ];
