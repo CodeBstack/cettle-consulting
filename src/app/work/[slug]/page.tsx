@@ -30,13 +30,13 @@ export default async function WorkArticle({ params }: Props) {
       <WorkHero />
       <section className="bg-navy pb-20 text-white">
         <div className="site-pad">
-          <p className="text-right text-[12px] tracking-[0.08em] text-white/70">
+          {/* <p className="text-right text-[12px] tracking-[0.08em] text-white/70">
             <span className="font-semibold">{item.label}</span>
             <span className="mx-2">·</span>
             <span>{item.date}</span>
-          </p>
+          </p> */}
 
-          <h1 className="mt-8 max-w-[820px] text-[28px] leading-[1.2] font-semibold tracking-[-0.02em] lg:text-[40px]">
+          <h1 className="mt8 max-w-[820px] text-[28px] leading-[1.2] font-semibold tracking-[-0.02em] lg:text-[40px]">
             {item.title}
           </h1>
           <div className="mt-8 max-w-[820px] space-y-5 text-[14px] leading-7 text-white/85 md:text-[16px] md:leading-8">

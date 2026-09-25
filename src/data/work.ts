@@ -65,105 +65,106 @@ export const workItems: WorkItem[] = [
   },
   
   {
-    slug: "national-lender-reputation-reset",
-    category: "Reputation and Crisis",
-    label: "REPUTATION",
-    date: "12 August 2026",
-    title: "National lender, reputation reset",
-    excerpt:
-      "Silence is not neutrality. The organisation that waits to be described will be described by its least generous observer.",
-    body: [
-      "A national lender had a public that no longer trusted the sentence on the website. Communication was still parked with the person who wrote the statement.",
-      "We treated reputation as a commercial asset: diagnosis, message architecture, spokespeople, and a crisis drawer that had already been opened in a drill. The story stopped being drafted in public.",
-    ],
-    cover: "/images/hero-work.png",
-    gallery: [
-      "/images/hero-work.png",
-      "/images/process-1.jpg",
-      "/images/cap-3.jpg",
-      "/images/about-hero.jpg",
-    ],
-  },
-  {
-    slug: "energy-group-executive-voice",
-    category: "Leadership",
-    label: "LEADERSHIP",
-    date: "28 July 2026",
-    title: "Energy group, executive voice",
-    excerpt:
-      "Leadership communication fails in the gap between prepared remarks and the first unscripted question. That gap is designable.",
-    body: [
-      "The executive team could run the business. They could not yet carry it in a hostile or technical room without the body betraying the sentence.",
-      "We pressure-tested a point of view, built a voice they would actually use, and rehearsed until presence was not performance. Interviews stopped being a lottery.",
-    ],
-    cover: "/images/hero-work.png",
-    gallery: [
-      "/images/hero-work.png",
-      "/images/process-2.jpg",
-      "/images/team-charles.jpg",
-      "/images/practice-studio.png",
-    ],
-  },
-  {
-    slug: "professional-services-narrative",
-    category: "Communication",
-    label: "COMMUNICATION",
-    date: "2 June 2026",
-    title: "Professional services, one spine for every room",
-    excerpt:
-      "Ask five members of staff what the business does and you get five answers, all of them partly right.",
-    body: [
-      "Inconsistent language had been treated as a branding issue. It was a system problem: nobody had decided which version was true when the versions competed.",
-      "A message architecture settled that argument. Product stories, leadership interviews, and crisis notes now come from the same spine without sounding identical.",
-    ],
-    cover: "/images/practice-comms.jpg",
-    gallery: [
-      "/images/practice-comms.png",
-      "/images/cap-1.jpg",
-      "/images/process-3.jpg",
-      "/images/hero-4.jpg",
-    ],
-  },
-  {
-    slug: "brand-by-design",
-    category: "Brand and Audience",
-    label: "BRAND",
-    date: "21 May 2026",
-    title: "Be positioned deliberately, not by default",
-    excerpt:
-      "Most brands are the residue of last year’s campaigns. Audience strategy is the decision to be known for something specific.",
-    body: [
-      "Default positioning looked busy and did not compound. The organisation spoke to everyone and meant little to the people who could say yes.",
-      "We narrowed the audience, sharpened the claim, and wrote the proof that makes it expensive to copy — language that survives a sceptical buyer and a staff member who has been there longer than the campaign.",
-    ],
-    cover: "/images/practice-brand.jpg",
-    gallery: [
-      "/images/practice-brand.jpg",
-      "/images/cap-2.jpg",
-      "/images/hero-3.jpg",
-      "/images/mission-sphere.jpg",
-    ],
-  },
-  {
-    slug: "industry-summit-flagship",
+    slug: "oriental-news-conference",
     category: "Events and Convening",
-    label: "CONVENING",
-    date: "4 July 2026",
-    title: "Industry summit, flagship convening",
+    label: "EVENTS",
+    date: "12 August 2026",
+    title: "Oriental News Nigeria 2026 Conference, Carbon Capture",
     excerpt:
-      "A conference fills a hall. A convening changes who is in the room, what they are allowed to say, and what happens after they leave.",
+      "Carbon capture is easy to slogan. Harder is a room where operators, policymakers, and the press leave with the same argument — and language they will actually use.",
     body: [
-      "The same budget can produce a forgettable conference or a day that still gets cited a year later. The difference is not production value. It is intent.",
-      "We designed the guest list, the agenda as an argument, and the follow-through — introductions, a published argument, and a date for the next decision.",
+      "Oriental News Nigeria convened its 2026 conference under the theme “Carbon Capture.” The brief was not a packed agenda for its own sake. It was a working room where the industry case for capture, storage, and the policy path around it could be heard, tested in public, and carried forward by people who report and decide.",
+      "Cettle shaped the narrative arc of the day: who needed to be in the room, how the sessions built one argument rather than a sequence of slides, and how speakers were briefed so the conversation held under live questions instead of collapsing into talking points.",
+      "The result was a conference that treated carbon capture as a commercial and policy problem, not a slogan — a convening Oriental News and its partners can still point to when the next room asks what a serious energy conversation looks like.",
     ],
-    cover: "/images/practice-events.jpg",
+    cover: "/images/award-group.jpg",
     gallery: [
-      "/images/practice-events-hero.png",
-      "/images/work-event-group.jpg",
-      "/images/work-event-podium.jpg",
-      "/images/work-event-close.jpg",
+      "/images/award-group.jpg",
+      "/images/award-1.jpg",
+      "/images/testimonial-see-presenting.jpg",
+      "/images/testimonial-see-room.jpg",
     ],
   },
+  // {
+  //   slug: "energy-group-executive-voice",
+  //   category: "Leadership",
+  //   label: "LEADERSHIP",
+  //   date: "28 July 2026",
+  //   title: "Energy group, executive voice",
+  //   excerpt:
+  //     "Leadership communication fails in the gap between prepared remarks and the first unscripted question. That gap is designable.",
+  //   body: [
+  //     "The executive team could run the business. They could not yet carry it in a hostile or technical room without the body betraying the sentence.",
+  //     "We pressure-tested a point of view, built a voice they would actually use, and rehearsed until presence was not performance. Interviews stopped being a lottery.",
+  //   ],
+  //   cover: "/images/hero-work.png",
+  //   gallery: [
+  //     "/images/hero-work.png",
+  //     "/images/process-2.jpg",
+  //     "/images/team-charles.jpg",
+  //     "/images/practice-studio.png",
+  //   ],
+  // },
+  // {
+  //   slug: "professional-services-narrative",
+  //   category: "Communication",
+  //   label: "COMMUNICATION",
+  //   date: "2 June 2026",
+  //   title: "Professional services, one spine for every room",
+  //   excerpt:
+  //     "Ask five members of staff what the business does and you get five answers, all of them partly right.",
+  //   body: [
+  //     "Inconsistent language had been treated as a branding issue. It was a system problem: nobody had decided which version was true when the versions competed.",
+  //     "A message architecture settled that argument. Product stories, leadership interviews, and crisis notes now come from the same spine without sounding identical.",
+  //   ],
+  //   cover: "/images/practice-comms.jpg",
+  //   gallery: [
+  //     "/images/practice-comms.png",
+  //     "/images/cap-1.jpg",
+  //     "/images/process-3.jpg",
+  //     "/images/hero-4.jpg",
+  //   ],
+  // },
+  // {
+  //   slug: "brand-by-design",
+  //   category: "Brand and Audience",
+  //   label: "BRAND",
+  //   date: "21 May 2026",
+  //   title: "Be positioned deliberately, not by default",
+  //   excerpt:
+  //     "Most brands are the residue of last year’s campaigns. Audience strategy is the decision to be known for something specific.",
+  //   body: [
+  //     "Default positioning looked busy and did not compound. The organisation spoke to everyone and meant little to the people who could say yes.",
+  //     "We narrowed the audience, sharpened the claim, and wrote the proof that makes it expensive to copy — language that survives a sceptical buyer and a staff member who has been there longer than the campaign.",
+  //   ],
+  //   cover: "/images/practice-brand.jpg",
+  //   gallery: [
+  //     "/images/practice-brand.jpg",
+  //     "/images/cap-2.jpg",
+  //     "/images/hero-3.jpg",
+  //     "/images/mission-sphere.jpg",
+  //   ],
+  // },
+  // {
+  //   slug: "industry-summit-flagship",
+  //   category: "Events and Convening",
+  //   label: "CONVENING",
+  //   date: "4 July 2026",
+  //   title: "Industry summit, flagship convening",
+  //   excerpt:
+  //     "A conference fills a hall. A convening changes who is in the room, what they are allowed to say, and what happens after they leave.",
+  //   body: [
+  //     "The same budget can produce a forgettable conference or a day that still gets cited a year later. The difference is not production value. It is intent.",
+  //     "We designed the guest list, the agenda as an argument, and the follow-through — introductions, a published argument, and a date for the next decision.",
+  //   ],
+  //   cover: "/images/practice-events.jpg",
+  //   gallery: [
+  //     "/images/practice-events-hero.png",
+  //     "/images/work-event-group.jpg",
+  //     "/images/work-event-podium.jpg",
+  //     "/images/work-event-close.jpg",
+  //   ],
+  // },
 ];
 
 export function getWork(slug: string) {
