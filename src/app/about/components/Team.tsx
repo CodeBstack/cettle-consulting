@@ -153,7 +153,7 @@ function TeamModal({ person, onClose }: { person: Person; onClose: () => void })
         style={{
           backgroundImage: [
             "linear-gradient(90deg, rgba(232, 242, 255, 0.45) 0%, rgba(176, 208, 240, 0.14) 38%, rgba(18, 72, 168, 0.1) 100%)",
-            "url(/images/team-modal-bg.png)",
+            "url(/images/team-modal-bg.jpg)",
           ].join(", "),
           backgroundPosition: "center, right center",
           backgroundSize: "cover, cover",
