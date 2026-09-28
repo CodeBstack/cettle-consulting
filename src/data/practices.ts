@@ -33,7 +33,7 @@ export const practiceDetails: PracticeDetail[] = [
     summary:
       "Corporate communication, crisis response, media relations, and reputation management for organisations whose public standing is a commercial asset.",
     image: "/images/practice-comms.jpg",
-    heroImage: "/images/practice-comms.png",
+    heroImage: "/images/practice-comms.jpg",
     heroObject: "object-[center_45%]",
     imageAlt: "Hand holding a megaphone through a circular cutout",
     cardBody:
@@ -62,8 +62,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/studio-1.png",
-      photo: "/images/photo-1.png",
+      studio: "/images/studio-1.jpg",
+      photo: "/images/photo-1.jpg",
       steps: [
         {
           title: "Audit",
@@ -90,7 +90,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Media list and outreach plan",
       "Perception baseline report and quarterly review against it",
     ],
-    deliverablesImage: "/images/what-you-get-1.png",
+    deliverablesImage: "/images/what-you-get-1.jpg",
     audience: [
       "Organisations with a public, a regulator, or a board.",
       "Businesses entering a new market or a funding round.",
@@ -137,8 +137,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/studio-2.png",
-      photo: "/images/photo-2.png",
+      studio: "/images/studio-2.jpg",
+      photo: "/images/photo-2.jpg",
       steps: [
         {
           title: "Needs assessment",
@@ -165,7 +165,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Cohort report to the programme sponsor, with observations and recommendations",
       "Certificates of completion where required",
     ],
-    deliverablesImage: "/images/what-you-get-2.png",
+    deliverablesImage: "/images/what-you-get-2.jpg",
     audience: [
       "Organisations building a leadership bench.",
       "Human resources and learning teams with a budget and a capability gap.",
@@ -196,8 +196,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/studio-3.png",
-      photo: "/images/photo-3.png",
+      studio: "/images/studio-3.jpg",
+      photo: "/images/photo-3.jpg",
       steps: [
         {
           title: "Objective setting.",
@@ -224,7 +224,7 @@ export const practiceDetails: PracticeDetail[] = [
       "On-site management and minute-by-minute direction",
       "Post-event report with recordings, quotes, and reusable content assets",
     ],
-    deliverablesImage: "/images/what-you-get-3.png",
+    deliverablesImage: "/images/what-you-get-3.jpg",
     audience: [
       "Associations and professional bodies running an annual conference.",
       "Corporates convening staff, partners, or stakeholders.",
@@ -255,8 +255,8 @@ export const practiceDetails: PracticeDetail[] = [
       },
     ],
     engagement: {
-      studio: "/images/studio-4.png",
-      photo: "/images/photo-4.png",
+      studio: "/images/studio-4.jpg",
+      photo: "/images/photo-4.jpg",
       steps: [
         {
           title: "Discovery",
@@ -283,7 +283,7 @@ export const practiceDetails: PracticeDetail[] = [
       "Engagement and content framework",
       "Internal briefing pack for staff adoption",
     ],
-    deliverablesImage: "/images/what-you-get-4.png",
+    deliverablesImage: "/images/what-you-get-4.jpg",
     audience: [
       "Businesses that have grown past the story they started with.",
       "Firms entering a new market or a new category.",

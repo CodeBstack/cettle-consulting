@@ -5,7 +5,7 @@ export function AboutIntro() {
     <section className="relative">
       <div className="absolute inset-x-0 top-0 z-0 h-[280px] overflow-hidden sm:h-[400px] md:h-[560px]">
         <Image
-          src="/images/hero-waves.png"
+          src="/images/hero-waves.jpg"
           alt=""
           fill
           priority
@@ -35,7 +35,7 @@ export function AboutIntro() {
             </div>
             <div className="relative h-[220px] sm:h-[300px] md:h-[380px]">
               <Image
-                src="/images/office.png"
+                src="/images/office.jpg"
                 alt="Two colleagues reviewing analytics together in an office"
                 fill
                 sizes="(min-width: 1440px) 1280px, 90vw"

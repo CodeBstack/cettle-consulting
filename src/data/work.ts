@@ -36,9 +36,9 @@ export const workItems: WorkItem[] = [
     cover: "/images/work-event-group.jpg",
     gallery: [
       "/images/work-event-group.jpg",
-      "/images/work-event-podium.png",
-      "/images/work-event-close.png",
-      "/images/work-event-open.png",
+      "/images/work-event-podium.jpg",
+      "/images/work-event-close.jpg",
+      "/images/work-event-open.jpg",
     ],
   },
    {
@@ -97,12 +97,12 @@ export const workItems: WorkItem[] = [
   //     "The executive team could run the business. They could not yet carry it in a hostile or technical room without the body betraying the sentence.",
   //     "We pressure-tested a point of view, built a voice they would actually use, and rehearsed until presence was not performance. Interviews stopped being a lottery.",
   //   ],
-  //   cover: "/images/hero-work.png",
+  //   cover: "/images/hero-work.jpg",
   //   gallery: [
-  //     "/images/hero-work.png",
+  //     "/images/hero-work.jpg",
   //     "/images/process-2.jpg",
   //     "/images/team-charles.jpg",
-  //     "/images/practice-studio.png",
+  //     "/images/practice-studio.jpg",
   //   ],
   // },
   // {
@@ -119,7 +119,7 @@ export const workItems: WorkItem[] = [
   //   ],
   //   cover: "/images/practice-comms.jpg",
   //   gallery: [
-  //     "/images/practice-comms.png",
+  //     "/images/practice-comms.jpg",
   //     "/images/cap-1.jpg",
   //     "/images/process-3.jpg",
   //     "/images/hero-4.jpg",
@@ -159,7 +159,7 @@ export const workItems: WorkItem[] = [
   //   ],
   //   cover: "/images/practice-events.jpg",
   //   gallery: [
-  //     "/images/practice-events-hero.png",
+  //     "/images/practice-events-hero.jpg",
   //     "/images/work-event-group.jpg",
   //     "/images/work-event-podium.jpg",
   //     "/images/work-event-close.jpg",
