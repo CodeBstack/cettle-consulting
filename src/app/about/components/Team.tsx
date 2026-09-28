@@ -282,6 +282,7 @@ export function Team() {
                     className="object-cover object-top"
                   />
                 </div>
+                
                 <div className="flex max-h[176px] flex-col bg-lime px-4 pt-4 md:px-5">
                   <h3 className="min-h-[2.6em] text-[18px] leading-snug font-semibold text-navy md:text-[20px]">
                     {person.name}
