@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "@/components/Button";
@@ -30,10 +31,11 @@ const TEAM: Person[] = [
     title: "Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
     image: "/images/team-charles.png",
     alt: "Portrait of Charles Ebereonwu",
+    heading:"Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
     paragraphs: [
       {
-        lead: "Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
-        text: " with nearly 30 years of professional experience spanning banking, oil & gas, corporate communications, governance, internal control, fraud examination, media relations, and executive leadership.",
+        // lead: "Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
+        text: "With nearly 30 years of professional experience spanning banking, oil & gas, corporate communications, governance, internal control, fraud examination, media relations, and executive leadership.",
       },
       {
         text: "He spent 25 years with TotalEnergies, including 17 years in corporate communication, where he held senior roles covering internal and external communication, external relations, and country-wide communication across TotalEnergies companies in Nigeria. His experience includes corporate communication strategy, crisis communication, media relations, stakeholder engagement, executive speech writing and coaching, conferences and exhibitions, and team leadership.",
@@ -75,35 +77,33 @@ const TEAM: Person[] = [
 
 function PortraitCard({ person }: { person: Person }) {
   return (
-    <article className="flex w-full flex-col overflow-hidden bg-navy sm:w-[248px]">
-      <div className="relative aspect-[4/5] bg-navy">
+    <article className="grid w-full grid-cols-[minmax(118px,42%)_1fr] overflow-hidden bg-navy sm:block sm:w-[210px]">
+      <div className="relative min-h-[156px] sm:aspect-[11/10] sm:min-h-0">
         <Image
           src={person.image}
           alt={person.alt}
           fill
-          sizes="248px"
-          className="object-cover object-top"
+          sizes="(min-width: 640px) 210px, 42vw"
+          className="object-cover object-[center_18%]"
         />
       </div>
-      <div className="bg-lime px-4 py-4">
-        <h3 className="text-[17px] leading-[1.25] font-semibold text-navy">{person.name}</h3>
-        <p className="mt-2 text-[12px] leading-[1.45] font-medium text-navy/90">{person.title}</p>
-      </div>
-      <div
-        className="flex h-11 items-center px-4 text-[13px] font-medium text-white"
-        style={{ background: READ_MORE_BAR }}
-        aria-hidden
-      >
-        Read More
+      <div className="flex min-w-0 flex-1 flex-col sm:contents">
+        <div className="flex flex-1 flex-col justify-center bg-lime px-3.5 py-3 sm:block sm:py-3.5">
+          <h3 className="text-[15px] leading-[1.2] font-semibold text-navy sm:text-[16px]">{person.name}</h3>
+          <p className="mt-1.5 text-[11px] leading-[1.35] font-medium text-navy">{person.title}</p>
+        </div>
       </div>
     </article>
   );
 }
 
+const PANEL_EASE = [0.22, 1, 0.36, 1] as const;
+
 function TeamModal({ person, onClose }: { person: Person; onClose: () => void }) {
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const scrollbar = window.innerWidth - document.documentElement.clientWidth;
@@ -144,55 +144,79 @@ function TeamModal({ person, onClose }: { person: Person; onClose: () => void })
   }, [onClose]);
 
   return createPortal(
-    <div className="fixed inset-0 z-[80] overflow-y-auto" onMouseDown={onClose}>
-      <div className="absolute inset-0 bg-[#7eabe0]/78 backdrop-blur-[14px]" />
-      <div className="relative flex min-h-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14">
-        <div
+    <div className="fixed inset-0 z-[80]">
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: [
+            "linear-gradient(90deg, rgba(232, 242, 255, 0.45) 0%, rgba(176, 208, 240, 0.14) 38%, rgba(18, 72, 168, 0.1) 100%)",
+            "url(/images/team-modal-bg.png)",
+          ].join(", "),
+          backgroundPosition: "center, right center",
+          backgroundSize: "cover, cover",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: reduceMotion ? 0.12 : 0.35, ease: PANEL_EASE }}
+      />
+      <div
+        className="relative z-10 flex h-full items-center justify-center overflow-y-auto px-4 py-10 sm:px-6 sm:py-14"
+        onMouseDown={onClose}
+      >
+        <motion.div
           ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="w-full max-w-[1040px]"
+          className="my-auto w-full max-w-[920px]"
           onMouseDown={(event) => event.stopPropagation()}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 22, scale: 0.98 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14, scale: 0.985 }}
+          transition={{ duration: reduceMotion ? 0.12 : 0.42, ease: PANEL_EASE }}
         >
-          <h2 id={titleId} className="mb-4 text-[20px] leading-none sm:mb-5 sm:text-[22px]">
-            <span className="font-semibold text-[#161616]">About us</span>{" "}
-            <span className="font-normal text-[#8d8d8d]">{person.name}</span>
+          <h2 id={titleId} className="mb-5 text-[18px] leading-none sm:mb-6 sm:text-[20px]">
+            <span className="font-semibold text-[#1D1D1D]">About</span>{" "}
+            <span className="font-normal text-[#1d1d1d]/60">{person.name}</span>
           </h2>
-          <div className="bg-white px-5 py-6 shadow-[0_18px_50px_rgba(20,48,96,0.16)] sm:px-8 sm:py-8 lg:px-10 lg:py-9">
-            <div className="flex flex-col gap-7 md:flex-row md:items-start md:gap-10 lg:gap-12">
+          <div className="bg-white px-5 py-6 sm:px-8 sm:py-7 lg:px-9 lg:pt-7 lg:pb-8">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
               <PortraitCard person={person} />
-              <div className="min-w-0 flex-1 pt-0.5">
+              <div className="min-w-0 flex-1 max-w-[653px]">
                 {person.heading ? (
-                  <p className="mb-3 text-[14px] leading-6 font-semibold text-[#3f3f3f] md:text-[15px]">
+                  <p className="mb3 text-[14px] leading6 font-semibold text-[#838C95]">
                     {person.heading}
                   </p>
                 ) : null}
-                <div className="space-y-3.5 text-[13px] leading-[1.7] text-[#8f8f8f] md:text-[13.5px] md:leading-[1.75]">
+                <div className="space-y-1.5 text-[11px] leading-[1.65] text-[#838C95]">
                   {person.paragraphs.map((paragraph) => (
                     <p key={paragraph.text}>
                       {paragraph.lead ? (
-                        <span className="font-semibold text-[#5a5a5a]">{paragraph.lead}</span>
+                        <span className="font-semibold text-[#6d767e]">{paragraph.lead}</span>
                       ) : null}
                       {paragraph.text}
                     </p>
                   ))}
                 </div>
-              </div>
-            </div>
-            <div className="mt-8 flex justify-center sm:mt-9">
+
+                <div className="mt-8 flex justifycenter">
               <button
                 ref={closeRef}
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-9 items-center gap-2 rounded-[4px] bg-black px-4 text-[13px] font-medium text-white transition hover:bg-[#1a1a1a]"
+                className="inline-flex h-8 items-center gap-1.5 rounded-[3px] bg-black px-3 text-[12px] font-medium text-white transition hover:bg-[#1a1a1a]"
               >
-                <ChevronLeft className="h-3.5 w-3.5" />
+                <ChevronLeft className="h-3 w-3" />
                 Back
               </button>
             </div>
+              </div>
+            </div>
+           
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>,
     document.body,
@@ -215,11 +239,11 @@ export function Team() {
     setActiveId(null);
   }, []);
 
-  useEffect(() => {
-    if (activeId || !restoreFocus.current) return;
+  function finishClose() {
+    if (!restoreFocus.current) return;
     restoreFocus.current = false;
     triggerRef.current?.focus();
-  }, [activeId]);
+  }
 
   function open(personId: string, trigger: HTMLButtonElement) {
     triggerRef.current = trigger;
@@ -259,7 +283,7 @@ export function Team() {
                 <button
                   type="button"
                   onClick={(event) => open(person.id, event.currentTarget)}
-                  className="inline-flex h-12 w-full items-center justify-between gap-3 px-5 text-left text-[14px] font-semibold tracking-wide text-white transition hover:opacity-95"
+                  className="inline-flex h-12 w-full cursor-pointer items-center justify-between gap-3 px-5 text-left text-[14px] font-semibold tracking-wide text-white transition hover:opacity-95"
                   style={{ background: READ_MORE_BAR }}
                 >
                   <span>Read More</span>
@@ -275,7 +299,9 @@ export function Team() {
           </div>
         </div>
       </div>
-      {mounted && active ? <TeamModal person={active} onClose={close} /> : null}
+      <AnimatePresence onExitComplete={finishClose}>
+        {mounted && active ? <TeamModal key={active.id} person={active} onClose={close} /> : null}
+      </AnimatePresence>
     </section>
   );
 }
