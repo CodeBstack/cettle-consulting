@@ -269,8 +269,11 @@ export function Team() {
         <div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {TEAM.map((person) => (
-              <article key={person.id} className="flex flex-col overflow-hidden bg-navy">
-                <div className="relative aspect-[4/5] bg-navy">
+              <article
+                key={person.id}
+                className="grid h-[443px] max-h-[443px] grid-rows-[minmax(0,1fr)_176px_48px] overflow-hidden bg-navy"
+              >
+                <div className="relative min-h-0 bg-navy">
                   <Image
                     src={person.image}
                     alt={person.alt}
@@ -279,11 +282,14 @@ export function Team() {
                     className="object-cover object-top"
                   />
                 </div>
-                <div className="flex flex-1 flex-col bg-lime px-5 py-5">
-                  <h3 className="min-h-[3rem] text-[18px] leading-snug font-semibold text-navy md:text-[20px]">
+                
+                <div className="flex max-h[176px] flex-col bg-lime px-4 pt-4 md:px-5">
+                  <h3 className="min-h-[2.6em] text-[18px] leading-snug font-semibold text-navy md:text-[20px]">
                     {person.name}
                   </h3>
-                  <p className="mt-2 text-[14px] leading-6 font-medium text-navy/85">{person.title}</p>
+                  <p className="mt1.5 line-clamp-3 text-[11px] leading[1.5] font-normal text-navy/85 md:text-[14px] mdleading-6">
+                    {person.title}
+                  </p>
                 </div>
                 <button
                   type="button"
