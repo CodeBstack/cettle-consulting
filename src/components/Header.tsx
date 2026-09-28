@@ -7,6 +7,12 @@ import { navLinks } from "@/data/site";
 import { Button } from "./Button";
 import { Logo } from "./Logo";
 
+function isActiveLink(href: string, pathname: string) {
+  if (href === "/") return pathname === "/";
+  if (href.startsWith("/services")) return pathname.startsWith("/services");
+  return pathname.startsWith(href);
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -24,12 +30,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-[41px] lg:flex">
           {navLinks.map((link) => {
-            const active =
-              link.href === "/"
-                ? pathname === "/"
-                : link.href.startsWith("/services")
-                  ? pathname.startsWith("/services")
-                  : pathname.startsWith(link.href);
+            const active = isActiveLink(link.href, pathname);
             return (
               <Link
                 key={link.href}
@@ -64,16 +65,22 @@ export function Header() {
       {open ? (
         <div className="border-t border-line bg-white py-6 lg:hidden">
           <nav className="site-pad flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-[16px] text-navy"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActiveLink(link.href, pathname);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-[3px] px-3 py-2 text-[16px] text-navy ${
+                    active ? "bg-lime-soft font-semibold" : "font-normal"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Button className="mt-2 w-full">Contact Us</Button>
           </nav>
         </div>

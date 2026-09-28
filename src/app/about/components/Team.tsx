@@ -29,7 +29,7 @@ const TEAM: Person[] = [
     id: "charles-ebereonwu",
     name: "Charles Ebereonwu, PhD",
     title: "Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
-    image: "/images/team-charles.png",
+    image: "/images/team-charles-card.png",
     alt: "Portrait of Charles Ebereonwu",
     heading:"Principal Consultant and Trainer at CETTLE CONSULTING NIGERIA LIMITED.",
     paragraphs: [
@@ -55,7 +55,7 @@ const TEAM: Person[] = [
     id: "princess-anyanwu",
     name: "Princess Anyanwu.",
     title: "Executive Assistant to Dr Charles",
-    image: "/images/team-princess.png",
+    image: "/images/team-princess-card.png",
     alt: "Portrait of Princess Anyanwu",
     heading: "Product, Strategy & Creative Solutions Professional",
     paragraphs: [
@@ -84,7 +84,7 @@ function PortraitCard({ person }: { person: Person }) {
           alt={person.alt}
           fill
           sizes="(min-width: 640px) 210px, 42vw"
-          className="object-cover object-[center_18%]"
+          className="object-cover object-top"
         />
       </div>
       <div className="flex min-w-0 flex-1 flex-col sm:contents">
@@ -102,6 +102,7 @@ const PANEL_EASE = [0.22, 1, 0.36, 1] as const;
 function TeamModal({ person, onClose }: { person: Person; onClose: () => void }) {
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const reduceMotion = useReducedMotion();
 
@@ -111,7 +112,8 @@ function TeamModal({ person, onClose }: { person: Person; onClose: () => void })
     const previousPadding = document.body.style.paddingRight;
     document.body.style.overflow = "hidden";
     document.body.style.paddingRight = `${scrollbar}px`;
-    closeRef.current?.focus();
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+    closeRef.current?.focus({ preventScroll: true });
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -162,15 +164,17 @@ function TeamModal({ person, onClose }: { person: Person; onClose: () => void })
         transition={{ duration: reduceMotion ? 0.12 : 0.35, ease: PANEL_EASE }}
       />
       <div
-        className="relative z-10 flex h-full items-center justify-center overflow-y-auto px-4 py-10 sm:px-6 sm:py-14"
+        ref={scrollRef}
+        className="relative z-10 h-full overflow-y-auto overscroll-contain"
         onMouseDown={onClose}
       >
+        <div className="flex min-h-full items-start justify-center px-4 py-8 sm:items-center sm:px-6 sm:py-14">
         <motion.div
           ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="my-auto w-full max-w-[920px]"
+          className="w-full max-w-[920px]"
           onMouseDown={(event) => event.stopPropagation()}
           initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 22, scale: 0.98 }}
           animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
@@ -217,6 +221,7 @@ function TeamModal({ person, onClose }: { person: Person; onClose: () => void })
            
           </div>
         </motion.div>
+        </div>
       </div>
     </div>,
     document.body,
